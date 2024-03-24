@@ -1,0 +1,73 @@
+.footer {
+	background-color: $Yellow-950;
+	width: 100%;
+	padding: 64px 16px 64px 16px;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	justify-content: center;
+	gap: 48px;
+
+	a {
+		text-decoration: none;
+		color: $Yellow-100;
+		font-size: $Mobile-Footer;
+	}
+
+	p {
+		color: $Yellow-100;
+		font-size: $Mobile-Footer;
+	}
+
+	.bookmarks {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 24px;
+	}
+
+	.informations {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 48px;
+
+		.informations-description {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 24px;
+		}
+
+		p {
+			font-size: 16px;
+		}
+	}
+}
+
+@media screen and (min-width: 769px) {
+	.footer {
+		flex-direction: row;
+		justify-content: space-around;
+
+		a {
+			font-size: $Dekstop-Footer;
+			transition: color 0.3s, transform 0.3s;
+
+			&:hover {
+				color: $Yellow-300;
+				transform: scale(110%);
+			}
+		}
+
+		p {
+			font-size: $Dekstop-Footer;
+		}
+
+		.informations {
+			p {
+				font-size: 16px;
+			}
+		}
+	}
+}

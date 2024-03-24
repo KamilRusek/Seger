@@ -1,0 +1,56 @@
+header {
+	height: 100vh;
+	//width: 100vw;
+	padding: 64px 16px 64px 16px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: $Yellow-950;
+
+	.header-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 48px;
+
+		.header-logo {
+			height: 100%;
+			width: 100%;
+			filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+		}
+
+		h1 {
+			font-size: $Mobile-H1;
+			color: $Yellow-950;
+			font-weight: bold;
+			letter-spacing: 2%;
+			text-align: center;
+		}
+	}
+}
+
+@media screen and (min-width: 769px) {
+	header {
+		padding: 64px;
+
+		.burger-icon {
+			display: none;
+		}
+		.nav-desktop {
+			display: block;
+		}
+
+		.header-info {
+			.header-logo {
+				height: 372px;
+				width: 700px;
+			}
+			h1 {
+				font-size: $Desktop-H1;
+				color: $Yellow-950;
+			}
+		}
+	}
+}

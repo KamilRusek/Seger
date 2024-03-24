@@ -1,0 +1,21 @@
+@import './base/reset';
+@import './utils/variables';
+
+@import './pages/navigation';
+@import './pages/header';
+@import './pages/section-photo';
+@import './pages/about-us';
+@import './pages/contact';
+@import './pages/footer';
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: $Yellow-100;
+	font-family: $MainFont;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
