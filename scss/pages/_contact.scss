@@ -51,10 +51,12 @@
 	.contact-map-container {
 		height: 500px;
 		width: 100%;
+		display: flex;
+		justify-content: center;
 
 		.contact-map {
 			height: 100%;
-			width: 100%;
+			width: 75%;
 			border-radius: 25px;
 		}
 	}

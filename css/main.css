@@ -203,7 +203,14 @@ header .header-info h1 {
   }
 }
 .photo-section {
-  display: none;
+  width: 100%;
+  height: 50vh;
+  display: block;
+  background-image: url(../sources/img/section-photo-image.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 @media screen and (min-width: 769px) {
@@ -323,10 +330,12 @@ header .header-info h1 {
 .contact .contact-map-container {
   height: 500px;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .contact .contact-map-container .contact-map {
   height: 100%;
-  width: 100%;
+  width: 75%;
   border-radius: 25px;
 }
 
