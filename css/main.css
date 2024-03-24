@@ -209,7 +209,6 @@ header .header-info h1 {
   background-image: url(../sources/img/section-photo-image.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center;
 }
 
