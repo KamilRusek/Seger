@@ -43,7 +43,7 @@
 }
 .nav-mobile-active .nav-mobile-active-options a {
   font-size: 48px;
-  color: #FEFBCF;
+  color: #fefbcf;
   text-decoration: none;
   font-weight: bold;
   letter-spacing: 2%;
@@ -52,7 +52,7 @@
   transition: color 0.3s, transform 0.3s;
 }
 .nav-mobile-active .nav-mobile-active-options a:hover {
-  color: #FBF270;
+  color: #fbf270;
   transform: scale(110%);
 }
 
@@ -104,7 +104,7 @@
   }
   .nav-desktop .nav-desktop-active a {
     font-size: 24px;
-    color: #FEFBCF;
+    color: #fefbcf;
     text-decoration: none;
     font-weight: bold;
     letter-spacing: 2%;
@@ -113,7 +113,7 @@
     transition: color 0.3s, transform 0.3s;
   }
   .nav-desktop .nav-desktop-active a:hover {
-    color: #FBF270;
+    color: #fbf270;
     transform: scale(110%);
   }
 }
@@ -234,7 +234,7 @@ header .header-info h1 {
 }
 .about-us {
   padding: 64px 16px 64px 16px;
-  color: #191702;
+  color: #150d52;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -297,7 +297,7 @@ header .header-info h1 {
   align-items: center;
   justify-content: center;
   gap: 48px;
-  color: #191702;
+  color: #150d52;
 }
 .contact h3 {
   font-size: 39px;
@@ -308,7 +308,7 @@ header .header-info h1 {
 }
 .contact a {
   font-size: 25px;
-  color: black;
+  color: #150d52;
 }
 .contact .contact-informations {
   display: flex;
@@ -359,11 +359,11 @@ header .header-info h1 {
 }
 .footer a {
   text-decoration: none;
-  color: #FEFBCF;
+  color: #fefbcf;
   font-size: 30px;
 }
 .footer p {
-  color: #FEFBCF;
+  color: #fefbcf;
   font-size: 30px;
 }
 .footer .bookmarks {
@@ -398,7 +398,7 @@ header .header-info h1 {
     transition: color 0.3s, transform 0.3s;
   }
   .footer a:hover {
-    color: #FBF270;
+    color: #fbf270;
     transform: scale(110%);
   }
   .footer p {
@@ -413,8 +413,8 @@ html {
 }
 
 body {
-  background-color: #FEFBCF;
-  font-family: "Poppins", sans-serif;
+  background-color: #fefbcf;
+  font-family: "Comic Sans MS", "Comic Sans";
   display: flex;
   flex-direction: column;
   align-items: center;
