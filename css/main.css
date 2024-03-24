@@ -335,13 +335,16 @@ header .header-info h1 {
 }
 .contact .contact-map-container .contact-map {
   height: 100%;
-  width: 75%;
+  width: 100%;
   border-radius: 25px;
 }
 
 @media screen and (min-width: 769px) {
   .contact {
     padding: 64px;
+  }
+  .contact .contact-map-container .contact-map {
+    width: 75%;
   }
 }
 .slider {
@@ -355,7 +358,7 @@ header .header-info h1 {
   justify-content: flex-start;
   align-items: center;
   height: 50vh;
-  width: 50vw;
+  width: 100%;
   margin: auto;
   overflow: hidden;
   position: relative;
@@ -364,7 +367,6 @@ header .header-info h1 {
 .slide {
   width: 100%;
   height: 100%;
-  border-radius: 10px;
   -o-object-fit: cover;
      object-fit: cover;
   position: absolute;
@@ -379,7 +381,8 @@ header .header-info h1 {
 }
 
 /* Style dla przycisków nawigacyjnych */
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -398,6 +401,14 @@ header .header-info h1 {
   right: 10px;
 }
 
+@media screen and (min-width: 769px) {
+  .slides {
+    width: 50%;
+  }
+  .slide {
+    border-radius: 10px;
+  }
+}
 .footer {
   background-color: #191702;
   width: 100%;

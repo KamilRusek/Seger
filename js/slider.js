@@ -2,8 +2,7 @@ let slideIndex = 0
 showSlides()
 
 function plusSlides(n) {
-	slideIndex += n
-	showSlides()
+	showSlides((slideIndex += n))
 }
 
 function showSlides() {
@@ -19,7 +18,8 @@ function showSlides() {
 		slides[i].classList.remove('active')
 	}
 	slides[slideIndex].classList.add('active')
-	slideIndex++
 }
 
-setInterval(showSlides, 5000) // Automatyczne przewijanie co 5 sekund
+setInterval(function () {
+	plusSlides(1)
+}, 5000) // Automatyczne przewijanie co 5 sekund
