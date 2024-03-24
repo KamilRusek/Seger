@@ -14,8 +14,14 @@ html {
 
 body {
 	background-color: $Yellow-100;
-	font-family: $MainFont;
+	font-family: $MobileFont;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+@media screen and (min-width: 769px) {
+	body {
+		font-family: $MainFont;
+	}
 }
