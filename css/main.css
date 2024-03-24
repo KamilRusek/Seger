@@ -208,7 +208,7 @@ header .header-info h1 {
 @media screen and (min-width: 769px) {
   .photo-section {
     width: 100vw;
-    height: 50vh;
+    height: 60vh;
     display: block;
     background-image: url(../sources/img/section-photo-image.jpeg);
     background-size: cover;
@@ -227,13 +227,13 @@ header .header-info h1 {
   align-items: flex-start;
 }
 .about-us h2 {
-  font-size: 45px;
+  font-size: 30px;
 }
 .about-us h4 {
-  font-size: 25px;
+  font-size: 20px;
 }
 .about-us p {
-  font-size: 25px;
+  font-size: 20px;
 }
 .about-us .polityka-jakosci {
   display: flex;
@@ -243,7 +243,7 @@ header .header-info h1 {
 }
 .about-us .polityka-jakosci li {
   list-style-position: inside;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 @media screen and (min-width: 769px) {
@@ -256,13 +256,13 @@ header .header-info h1 {
     align-items: flex-start;
   }
   .about-us h2 {
-    font-size: 45px;
+    font-size: 30px;
   }
   .about-us h4 {
     font-size: 25px;
   }
   .about-us p {
-    font-size: 25px;
+    font-size: 20px;
   }
   .about-us .polityka-jakosci {
     display: flex;
@@ -272,7 +272,7 @@ header .header-info h1 {
   }
   .about-us .polityka-jakosci li {
     list-style-position: inside;
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 .contact {
@@ -285,14 +285,14 @@ header .header-info h1 {
   color: #150d52;
 }
 .contact h3 {
-  font-size: 39px;
+  font-size: 25px;
   text-align: center;
 }
 .contact p {
-  font-size: 25px;
+  font-size: 20px;
 }
 .contact a {
-  font-size: 25px;
+  font-size: 20px;
   color: #150d52;
 }
 .contact .contact-informations {
