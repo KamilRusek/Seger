@@ -285,9 +285,11 @@ header .header-info h1 {
   }
   .about-us .about-us-company .about-us-company-text h2 {
     font-size: 30px;
+    letter-spacing: 1px;
   }
   .about-us .about-us-company .about-us-company-text h4 {
     font-size: 25px;
+    letter-spacing: 1px;
   }
   .about-us .about-us-company .about-us-company-text p {
     font-size: 20px;
@@ -310,6 +312,7 @@ header .header-info h1 {
   }
   .about-us .polityka-jakosci h3 {
     padding: 25px 0 0 0;
+    letter-spacing: 1px;
   }
   .about-us .polityka-jakosci li {
     list-style-position: inside;
