@@ -76,6 +76,9 @@
 
 				p {
 					font-size: $Desktop-Body;
+					line-height: 150%;
+					letter-spacing: 1px;
+					padding: 25px 0 25px 0;
 				}
 			}
 		}
@@ -94,9 +97,15 @@
 			justify-content: center;
 			gap: 12px;
 
+			h3 {
+				padding: 25px 0 0 0;
+			}
+
 			li {
 				list-style-position: inside;
 				font-size: $Desktop-Body;
+				line-height: 150%;
+				letter-spacing: 1px;
 			}
 		}
 	}
