@@ -1,5 +1,6 @@
 .contact {
-	padding: 64px 16px 64px 16px;
+	//padding: 64px 16px 64px 16px;
+	padding: 64px 0px 0px 0px;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -8,43 +9,50 @@
 	gap: 48px;
 	color: $Font-Color-1;
 
-	h3 {
-		font-size: $Desktop-H3;
-		text-align: center;
-	}
-
-	p {
-		font-size: $Desktop-Body;
-	}
-
-	a {
-		font-size: $Desktop-Body;
-		color: $Font-Color-1;
-	}
-
-	.contact-informations {
+	.contact-text {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 24px;
+		gap: 48px;
+		padding: 0 16px 0 16px;
 
-		.contact-address {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.contact-numbers {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.contact-information {
+		h3 {
+			font-size: $Desktop-H3;
 			text-align: center;
+		}
+
+		p {
+			font-size: $Desktop-Body;
+		}
+
+		a {
+			font-size: $Desktop-Body;
+			color: $Font-Color-1;
+		}
+
+		.contact-informations {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 24px;
+
+			.contact-address {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.contact-numbers {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.contact-information {
+				text-align: center;
+			}
 		}
 	}
 
@@ -57,19 +65,12 @@
 		.contact-map {
 			height: 100%;
 			width: 100%;
-			border-radius: 25px;
 		}
 	}
 }
 
 @media screen and (min-width: 769px) {
-	.contact {
-		padding: 64px;
-
-		.contact-map-container {
-			.contact-map {
-				width: 75%;
-			}
-		}
+	.contact-map {
+		border-radius: 25px 25px 0 0;
 	}
 }

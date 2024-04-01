@@ -248,15 +248,19 @@ header .header-info h1 {
 .about-us .about-us-company p {
   font-size: 20px;
 }
-.about-us .polityka-jakosci {
+.about-us .quality-policy {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 12px;
+  gap: 24px;
 }
-.about-us .polityka-jakosci li {
+.about-us .quality-policy li {
   list-style-position: inside;
   font-size: 20px;
+}
+.about-us .quality-policy .quality-policy-photo img {
+  width: 100%;
+  height: auto;
 }
 .about-us .about-us-photo img {
   width: 100%;
@@ -276,12 +280,12 @@ header .header-info h1 {
     width: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 24px;
-  }
-  .about-us .about-us-company .about-us-company-text {
-    width: 50%;
+    gap: 50px;
+    background-color: rgba(255, 255, 255, 0.4901960784);
+    padding: 50px;
+    border-radius: 25px;
   }
   .about-us .about-us-company .about-us-company-text h2 {
     font-size: 30px;
@@ -304,25 +308,75 @@ header .header-info h1 {
     width: 100%;
     height: 100%;
   }
-  .about-us .polityka-jakosci {
+  .about-us .quality-policy {
+    width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    background-color: rgba(255, 255, 255, 0.4901960784);
+    padding: 50px;
+    border-radius: 25px;
   }
-  .about-us .polityka-jakosci h3 {
+  .about-us .quality-policy .quality-policy-text h3 {
     padding: 25px 0 0 0;
     letter-spacing: 1px;
   }
-  .about-us .polityka-jakosci li {
+  .about-us .quality-policy .quality-policy-text li {
     list-style-position: inside;
     font-size: 20px;
     line-height: 150%;
     letter-spacing: 1px;
   }
+  .about-us .quality-policy .quality-policy-photo {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  .about-us .quality-policy .quality-policy-photo img {
+    width: 50%;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  }
+}
+@media screen and (min-width: 1023px) {
+  .about-us {
+    padding: 64px;
+    gap: 64px;
+    align-items: center;
+    align-items: flex-start;
+  }
+  .about-us .about-us-company {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    background-color: rgba(255, 255, 255, 0.4901960784);
+    padding: 50px;
+    border-radius: 25px;
+  }
+  .about-us .about-us-company .about-us-company-text {
+    width: 50%;
+  }
+  .about-us .quality-policy {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 50px;
+    background-color: rgba(255, 255, 255, 0.4901960784);
+    padding: 50px;
+    border-radius: 25px;
+  }
+  .about-us .quality-policy .quality-policy-text {
+    width: 50%;
+  }
 }
 .contact {
-  padding: 64px 16px 64px 16px;
+  padding: 64px 0px 0px 0px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -331,37 +385,43 @@ header .header-info h1 {
   gap: 48px;
   color: #150d52;
 }
-.contact h3 {
+.contact .contact-text {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 0 16px 0 16px;
+}
+.contact .contact-text h3 {
   font-size: 25px;
   text-align: center;
 }
-.contact p {
+.contact .contact-text p {
   font-size: 20px;
 }
-.contact a {
+.contact .contact-text a {
   font-size: 20px;
   color: #150d52;
 }
-.contact .contact-informations {
+.contact .contact-text .contact-informations {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 24px;
 }
-.contact .contact-informations .contact-address {
+.contact .contact-text .contact-informations .contact-address {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.contact .contact-informations .contact-numbers {
+.contact .contact-text .contact-informations .contact-numbers {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.contact .contact-informations .contact-information {
+.contact .contact-text .contact-informations .contact-information {
   text-align: center;
 }
 .contact .contact-map-container {
@@ -373,15 +433,11 @@ header .header-info h1 {
 .contact .contact-map-container .contact-map {
   height: 100%;
   width: 100%;
-  border-radius: 25px;
 }
 
 @media screen and (min-width: 769px) {
-  .contact {
-    padding: 64px;
-  }
-  .contact .contact-map-container .contact-map {
-    width: 75%;
+  .contact-map {
+    border-radius: 25px 25px 0 0;
   }
 }
 .h2-slider {
