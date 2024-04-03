@@ -32,9 +32,14 @@
 		justify-content: center;
 		gap: 24px;
 
-		li {
-			list-style-position: inside;
-			font-size: $Desktop-Body;
+		.quality-policy-text {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+			li {
+				list-style-position: inside;
+				font-size: $Desktop-Body;
+			}
 		}
 
 		.quality-policy-photo {
@@ -113,6 +118,7 @@
 			border-radius: 25px;
 
 			.quality-policy-text {
+				gap: 0px;
 				h3 {
 					padding: 25px 0 0 0;
 					letter-spacing: 1px;
