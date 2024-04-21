@@ -206,7 +206,7 @@ header .header-info h1 {
   width: 100%;
   height: 50vh;
   display: block;
-  background-image: url(../sources/img/photo-section/section-photo-image.jpeg);
+  background-image: url(../sources/img/photo-section/section-photo-image-2.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -217,7 +217,7 @@ header .header-info h1 {
     width: 100%;
     height: 60vh;
     display: block;
-    background-image: url(../sources/img/photo-section/section-photo-image.jpeg);
+    background-image: url(../sources/img/photo-section/section-photo-image-2.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -288,7 +288,9 @@ header .header-info h1 {
     flex-direction: column;
     align-items: center;
     gap: 50px;
-    background-color: rgba(255, 255, 255, 0.4901960784);
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
     padding: 50px;
     border-radius: 25px;
   }
@@ -320,7 +322,9 @@ header .header-info h1 {
     flex-direction: column;
     align-items: center;
     gap: 50px;
-    background-color: rgba(255, 255, 255, 0.4901960784);
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
     padding: 50px;
     border-radius: 25px;
   }
@@ -361,7 +365,9 @@ header .header-info h1 {
     flex-direction: row;
     align-items: center;
     gap: 50px;
-    background-color: rgba(255, 255, 255, 0.4901960784);
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
     padding: 50px;
     border-radius: 25px;
   }
@@ -375,7 +381,9 @@ header .header-info h1 {
     flex-direction: row-reverse;
     align-items: center;
     gap: 50px;
-    background-color: rgba(255, 255, 255, 0.4901960784);
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
     padding: 50px;
     border-radius: 25px;
   }
@@ -627,7 +635,7 @@ html {
 }
 
 body {
-  background-color: #fefbcf;
+  background-color: #fcfbec;
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
