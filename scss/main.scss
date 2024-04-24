@@ -5,6 +5,8 @@
 @import './pages/header';
 @import './pages/section-photo';
 @import './pages/about-us';
+@import './pages/offers';
+@import './pages/offers-description';
 @import './pages/contact';
 @import './pages/slider';
 @import './pages/footer';
@@ -23,6 +25,10 @@ body {
 
 @media screen and (min-width: 769px) {
 	body {
-		font-family: $MainFont;
+		//font-family: $MainFont;
+		font-family: "Merienda", cursive;
+		font-optical-sizing: auto;
+		font-weight: 400;
+		font-style: normal;
 	}
 }
