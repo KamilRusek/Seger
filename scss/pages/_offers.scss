@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 64px 16px 64px 16px;
+	padding: 64px 0px 64px 0px;
 	h2 {
 		font-size: $Desktop-H2;
 		padding: 25px;
@@ -45,7 +45,10 @@
 			touch-action: manipulation;
 
 			p {
-				font-family: $MainFont;
+				font-family: 'Merienda', cursive;
+				font-optical-sizing: auto;
+				font-weight: 400;
+				font-style: normal;
 			}
 
 			&:hover {

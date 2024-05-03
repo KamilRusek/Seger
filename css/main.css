@@ -43,7 +43,7 @@
 }
 .nav-mobile-active .nav-mobile-active-options a {
   font-size: 48px;
-  color: #fefbcf;
+  color: #fffef5;
   text-decoration: none;
   font-weight: bold;
   letter-spacing: 2%;
@@ -104,7 +104,7 @@
   }
   .nav-desktop .nav-desktop-active a {
     font-size: 24px;
-    color: #fefbcf;
+    color: #fffef5;
     text-decoration: none;
     font-weight: bold;
     letter-spacing: 2%;
@@ -162,7 +162,8 @@ header {
   justify-content: center;
   align-items: center;
   background: rgb(255, 251, 183);
-  background: linear-gradient(180deg, rgb(255, 251, 183) 0%, rgb(252, 251, 236) 50%, rgb(255, 255, 255) 100%);
+  background: linear-gradient(180deg, rgb(255, 251, 183) 0%, rgb(252, 251, 236) 50%, rgb(255, 254, 245) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fffbb7",endColorstr="#fffef5",GradientType=1);
 }
 header .header-info {
   display: flex;
@@ -240,13 +241,16 @@ header .header-info h1 {
   gap: 24px;
   align-items: center;
 }
-.about-us .about-us-company h2 {
+.about-us .about-us-company .about-us-company-text {
+  padding: 0 16px 0 16px;
+}
+.about-us .about-us-company .about-us-company-text h2 {
   font-size: 30px;
 }
-.about-us .about-us-company h4 {
+.about-us .about-us-company .about-us-company-text h4 {
   font-size: 20px;
 }
-.about-us .about-us-company p {
+.about-us .about-us-company .about-us-company-text p {
   font-size: 20px;
 }
 .about-us .quality-policy {
@@ -256,6 +260,7 @@ header .header-info h1 {
   gap: 24px;
 }
 .about-us .quality-policy .quality-policy-text {
+  padding: 0 16px 0 16px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -264,15 +269,18 @@ header .header-info h1 {
   list-style-position: inside;
   font-size: 20px;
 }
+.about-us .quality-policy .quality-policy-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .about-us .quality-policy .quality-policy-photo img {
-  width: 100%;
+  width: 50%;
   height: auto;
 }
 .about-us .about-us-photo img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
-  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 @media screen and (min-width: 769px) {
@@ -289,11 +297,9 @@ header .header-info h1 {
     flex-direction: column;
     align-items: center;
     gap: 50px;
-    background-color: rgba(255, 255, 255, 0.9);
     -webkit-backdrop-filter: blur(2px);
             backdrop-filter: blur(2px);
     padding: 50px;
-    border-radius: 25px;
   }
   .about-us .about-us-company .about-us-company-text h2 {
     font-size: 30px;
@@ -310,9 +316,10 @@ header .header-info h1 {
     padding: 25px 0 25px 0;
   }
   .about-us .about-us-photo {
-    width: 50%;
+    width: 100%;
   }
   .about-us .about-us-photo img {
+    border-radius: 10px;
     width: 100%;
     height: 100%;
   }
@@ -323,11 +330,9 @@ header .header-info h1 {
     flex-direction: column;
     align-items: center;
     gap: 50px;
-    background-color: rgba(255, 255, 255, 0.9);
     -webkit-backdrop-filter: blur(2px);
             backdrop-filter: blur(2px);
     padding: 50px;
-    border-radius: 25px;
   }
   .about-us .quality-policy .quality-policy-text {
     gap: 0px;
@@ -343,7 +348,7 @@ header .header-info h1 {
     letter-spacing: 1px;
   }
   .about-us .quality-policy .quality-policy-photo {
-    width: 50%;
+    width: 100%;
     display: flex;
     justify-content: center;
   }
@@ -374,6 +379,14 @@ header .header-info h1 {
   .about-us .about-us-company .about-us-company-text {
     width: 50%;
   }
+  .about-us .about-us-photo {
+    width: 50%;
+  }
+  .about-us .about-us-photo img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+  }
   .about-us .quality-policy {
     width: 100%;
     display: flex;
@@ -381,21 +394,28 @@ header .header-info h1 {
     flex-direction: row-reverse;
     align-items: center;
     gap: 50px;
-    background-color: rgba(255, 255, 255, 0.9);
     -webkit-backdrop-filter: blur(2px);
             backdrop-filter: blur(2px);
     padding: 50px;
-    border-radius: 25px;
   }
   .about-us .quality-policy .quality-policy-text {
     width: 50%;
+  }
+  .about-us .quality-policy .quality-policy-photo {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  .about-us .quality-policy .quality-policy-photo img {
+    width: 50%;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
   }
 }
 .offers {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 64px 16px 64px 16px;
+  padding: 64px 0px 64px 0px;
 }
 .offers h2 {
   font-size: 30px;
@@ -440,7 +460,10 @@ header .header-info h1 {
   touch-action: manipulation;
 }
 .offers .offers-list .offer p {
-  font-family: "Comic Sans MS", "Comic Sans";
+  font-family: "Merienda", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 .offers .offers-list .offer:hover {
   box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
@@ -459,47 +482,35 @@ header .header-info h1 {
     flex-direction: row;
   }
 }
-/* Style dla modelu oferty */
-.modal {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 1001;
+.offer-description {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 64px 16px 64px 16px;
+  gap: 48px;
+  color: #150d52;
 }
-
-.modal-content {
-  width: 80%;
-  margin: auto;
+.offer-description .offer-description-offer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-/* Tło z przyciemnieniem */
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
+.offer-description .offer-description-offer img {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px); /* Dodaj lekki efekt rozmycia */
 }
 
+@media screen and (min-width: 769px) {
+  .offer-description {
+    padding: 64px;
+    align-items: center;
+    align-items: flex-start;
+  }
+  .offer-description .offer-description-offer img {
+    width: 50%;
+    height: 50%;
+  }
+}
 .contact {
   padding: 64px 0px 0px 0px;
   width: 100%;
@@ -690,11 +701,11 @@ header .header-info h1 {
 }
 .footer a {
   text-decoration: none;
-  color: #fefbcf;
+  color: #fffef5;
   font-size: 30px;
 }
 .footer p {
-  color: #fefbcf;
+  color: #fffef5;
   font-size: 30px;
 }
 .footer .bookmarks {
@@ -744,8 +755,11 @@ html {
 }
 
 body {
-  background-color: #fcfbec;
-  font-family: "Poppins", sans-serif;
+  background-color: #fffef5;
+  font-family: "Merienda", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   display: flex;
   flex-direction: column;
   align-items: center;

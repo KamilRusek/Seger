@@ -16,8 +16,12 @@ html {
 }
 
 body {
-	background-color: $Yellow-050;
-	font-family: $MobileFont;
+	background-color: #fffef5;
+	//font-family: $MobileFont;
+	font-family: 'Merienda', cursive;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -26,7 +30,7 @@ body {
 @media screen and (min-width: 769px) {
 	body {
 		//font-family: $MainFont;
-		font-family: "Merienda", cursive;
+		font-family: 'Merienda', cursive;
 		font-optical-sizing: auto;
 		font-weight: 400;
 		font-style: normal;
