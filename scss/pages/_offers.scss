@@ -5,6 +5,7 @@
 	padding: 64px 0px 64px 0px;
 	h2 {
 		font-size: $Desktop-H2;
+		color: $Font-Color-1;
 		padding: 25px;
 	}
 	.offers-list {
@@ -43,6 +44,7 @@
 			user-select: none;
 			-webkit-user-select: none;
 			touch-action: manipulation;
+			color: $Font-Color-1;
 
 			p {
 				font-family: 'Merienda', cursive;

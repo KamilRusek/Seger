@@ -232,7 +232,7 @@ header .header-info h1 {
   width: 100%;
   padding: 64px 16px 64px 16px;
   gap: 64px;
-  color: #150d52;
+  color: rgb(47, 42, 98);
 }
 .about-us .about-us-company {
   display: flex;
@@ -419,6 +419,7 @@ header .header-info h1 {
 }
 .offers h2 {
   font-size: 30px;
+  color: rgb(47, 42, 98);
   padding: 25px;
 }
 .offers .offers-list {
@@ -426,7 +427,7 @@ header .header-info h1 {
   flex-direction: column;
   justify-content: center;
   gap: 30px;
-  color: #150d52;
+  color: rgb(47, 42, 98);
 }
 .offers .offers-list .offer {
   align-self: center;
@@ -458,6 +459,7 @@ header .header-info h1 {
        user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  color: rgb(47, 42, 98);
 }
 .offers .offers-list .offer p {
   font-family: "Merienda", cursive;
@@ -488,7 +490,7 @@ header .header-info h1 {
   width: 100%;
   padding: 64px 16px 64px 16px;
   gap: 48px;
-  color: #150d52;
+  color: rgb(47, 42, 98);
 }
 .offer-description .offer-description-offer {
   display: flex;
@@ -519,7 +521,7 @@ header .header-info h1 {
   align-items: center;
   justify-content: center;
   gap: 48px;
-  color: #150d52;
+  color: rgb(47, 42, 98);
 }
 .contact .contact-text {
   display: flex;
@@ -536,7 +538,7 @@ header .header-info h1 {
 }
 .contact .contact-text a {
   font-size: 20px;
-  color: #150d52;
+  color: rgb(47, 42, 98);
 }
 .contact .contact-text .contact-informations {
   display: flex;
@@ -578,6 +580,7 @@ header .header-info h1 {
 }
 .h2-slider {
   font-size: 30px;
+  color: rgb(47, 42, 98);
   text-align: center;
   padding: 25px;
 }
@@ -755,7 +758,7 @@ html {
 }
 
 body {
-  background-color: #fffef5;
+  background-color: #fffefa;
   font-family: "Merienda", cursive;
   font-optical-sizing: auto;
   font-weight: 400;

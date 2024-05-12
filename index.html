@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/main.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -65,7 +66,7 @@
         </section>
 
         <section id="about-us" class="about-us">
-            <div class="about-us-company">
+            <div data-aos="fade-right" data-aos-duration="3000" class="about-us-company">
                 <div class="about-us-company-text">
                     <h2>O firmie</h2>
                     <p>Od momentu rozpoczęcia swojej działalności oferujemy swoim klientom fachową obsługę, dostawę oraz
@@ -81,7 +82,7 @@
                     <img src="./sources/img/about-us/company.png" alt="Fotografia firmy z zewnątrz">
                 </div>
             </div>
-            <div class="quality-policy">
+            <div data-aos="fade-left" data-aos-duration="3000" class="quality-policy">
                 <div class="quality-policy-text">
                     <h2>Polityka jakości naszej firmy</h2>
                     <h3>Polityka jakości obejmuje:</h3>
@@ -261,7 +262,6 @@
         <div class="informations">
             <div class="informations-description">
                 <a href="mailto:seger@seger.biz.pl">seger@seger.biz.pl</a>
-                <a href="">Polityka prywatności</a>
             </div>
             <p>All rights reserved Seger © 2024</p>
         </div>
@@ -270,6 +270,10 @@
     <script src="./js/navigation.js"></script>
     <script src="./js/slider.js"></script>
     <script src="./js/offers.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
