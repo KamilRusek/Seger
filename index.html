@@ -43,12 +43,13 @@
         </div>
 
         <div class="nav-desktop">
-            <a href="#home"><img src="./sources/img/logo/Seger - Logo jasne.svg" alt="Logo firmy Seger"
+            <a href="#home"><img src="./sources/img/logo/Seger - Logo ciemne bez napisu.svg" alt="Logo firmy Seger"
                     class="nav-logo"></a>
 
             <div class="nav-desktop-active">
                 <a href="#about-us">O firmie</a>
                 <a href="#offers">Oferta</a>
+                <a href="#gallery">Galeria</a>
                 <a href="#contact">Kontakt</a>
             </div>
         </div>
@@ -115,6 +116,12 @@
 
         <section id="offers" class="offers">
             <h2>Nasza oferta</h2>
+            <p>Nasza oferta obejmuje szeroki wybór wysokiej jakości uszczelek, taśm uszczelniających oraz innych
+                produktów niezbędnych do skutecznego zabezpieczenia różnorodnych konstrukcji.</p>
+            <p>Zapraszamy do zapoznania się z naszą ofertą i do eksploracji poszczególnych kategorii produktowych, aby
+                znaleźć rozwiązania idealnie dopasowane do Twoich potrzeb. Wierzymy, że nasze produkty pomogą Ci w
+                skutecznym zabezpieczeniu i termoizolacji różnorodnych konstrukcji.
+            </p>
             <div class="offers-list">
                 <button class="offer" onclick="window.location.href='sites/offers/uszczelnienia-statyczne.html'">
                     <p>Uszczelnienia statyczne</p>
@@ -196,31 +203,47 @@
             </div>
         </section>
 
-        <section class="slider">
-            <h2 class="h2-slider">Zdjęcia naszych produktów</h2>
-            <div class="slides">
-                <img class="slide" src="./sources/img/slider/1.jpeg" alt="Slide 1">
-                <img class="slide" src="./sources/img/slider/2.jpeg" alt="Slide 2">
-                <img class="slide" src="./sources/img/slider/3.jpeg" alt="Slide 3">
-                <img class="slide" src="./sources/img/slider/4.jpeg" alt="Slide 4">
-                <img class="slide" src="./sources/img/slider/5.jpeg" alt="Slide 5">
-                <img class="slide" src="./sources/img/slider/6.jpeg" alt="Slide 6">
-                <img class="slide" src="./sources/img/slider/7.jpeg" alt="Slide 7">
-                <img class="slide" src="./sources/img/slider/8.jpeg" alt="Slide 8">
-                <img class="slide" src="./sources/img/slider/9.jpeg" alt="Slide 9">
-                <img class="slide" src="./sources/img/slider/10.jpeg" alt="Slide 10">
-                <img class="slide" src="./sources/img/slider/11.jpeg" alt="Slide 11">
-                <img class="slide" src="./sources/img/slider/12.jpeg" alt="Slide 12">
-                <img class="slide" src="./sources/img/slider/13.jpeg" alt="Slide 13">
-                <img class="slide" src="./sources/img/slider/14.jpeg" alt="Slide 14">
-                <img class="slide" src="./sources/img/slider/15.jpeg" alt="Slide 15">
-                <img class="slide" src="./sources/img/slider/16.jpeg" alt="Slide 16">
-                <a class="prev" onclick="plusSlides(-1)">❮</a>
-                <a class="next" onclick="plusSlides(1)">❯</a>
+        <section id="gallery" class="slider">
+            <div class="slider-box">
+                <div class="slider-informations">
+                    <h2 class="h2-slider">Zdjęcia naszych produktów</h2>
+
+                    <p>Witaj w naszej wirtualnej galerii, gdzie pragniemy zaprezentować Ci bogactwo naszej oferty
+                        związanej z uszczelnieniami, które są kluczowe dla utrzymania integralności i
+                        funkcjonalności różnorodnych konstrukcji.</p>
+                    <p>Znajdziesz tutaj wszystko, co niezbędne do skutecznego uszczelnienia - od różnego rodzaju
+                        uszczelek, przez taśmy uszczelniające, po specjalistyczne produkty do izolacji termicznej. Każdy
+                        produkt został starannie zaprezentowany.</p>
+                    <p>Przeglądając naszą galerię, zauważysz również, że oferujemy szeroki wybór produktów dostosowanych
+                        do różnych zastosowań i branż. Bez względu na to, czy potrzebujesz uszczelek do zastosowań
+                        przemysłowych, czy produktów do domowych napraw - mamy wszystko, czego potrzebujesz, aby
+                        zapewnić kompleksową obsługę.</p>
+                </div>
+                <div class="slider-gallery">
+                    <div class="slides">
+                        <img class="slide" src="./sources/img/slider/1.jpeg" alt="Slide 1">
+                        <img class="slide" src="./sources/img/slider/2.jpeg" alt="Slide 2">
+                        <img class="slide" src="./sources/img/slider/3.jpeg" alt="Slide 3">
+                        <img class="slide" src="./sources/img/slider/4.jpeg" alt="Slide 4">
+                        <img class="slide" src="./sources/img/slider/5.jpeg" alt="Slide 5">
+                        <img class="slide" src="./sources/img/slider/6.jpeg" alt="Slide 6">
+                        <img class="slide" src="./sources/img/slider/7.jpeg" alt="Slide 7">
+                        <img class="slide" src="./sources/img/slider/8.jpeg" alt="Slide 8">
+                        <img class="slide" src="./sources/img/slider/9.jpeg" alt="Slide 9">
+                        <img class="slide" src="./sources/img/slider/10.jpeg" alt="Slide 10">
+                        <img class="slide" src="./sources/img/slider/11.jpeg" alt="Slide 11">
+                        <img class="slide" src="./sources/img/slider/12.jpeg" alt="Slide 12">
+                        <img class="slide" src="./sources/img/slider/13.jpeg" alt="Slide 13">
+                        <img class="slide" src="./sources/img/slider/14.jpeg" alt="Slide 14">
+                        <img class="slide" src="./sources/img/slider/15.jpeg" alt="Slide 15">
+                        <img class="slide" src="./sources/img/slider/16.jpeg" alt="Slide 16">
+                        <a class="prev" onclick="plusSlides(-1)">❮</a>
+                        <a class="next" onclick="plusSlides(1)">❯</a>
+                    </div>
+
+                    <div class="dots"></div>
+                </div>
             </div>
-
-            <div class="dots"></div>
-
         </section>
 
         <section id="contact" class="contact">
