@@ -484,6 +484,7 @@ header .header-info h1 {
     padding: 0px;
   }
   .offers {
+    align-items: normal;
     padding: 64px;
     gap: 25px;
   }
@@ -584,9 +585,9 @@ header .header-info h1 {
 }
 
 @media screen and (min-width: 769px) {
-  .contact-map {
-    border-radius: 25px 25px 0 0;
-  }
+  /*.contact-map {
+  	border-radius: 25px 25px 0 0;
+  }*/
 }
 .h2-slider {
   font-size: 30px;
@@ -701,6 +702,7 @@ header .header-info h1 {
     padding: 64px;
   }
   .slider .slider-box {
+    min-height: 50vh;
     display: flex;
     flex-direction: row;
     gap: 25px;
