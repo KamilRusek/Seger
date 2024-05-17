@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Strona internetowa firmy Seger. Hurtownia artykułów przemysłowych i uszczelnień technicznych. Oferujemy pasy klinowe, segery i simeringi oraz uszczelka oringi, uszczelnienia i kleje techniczne">
-    <title>Seger</title>
+    <title>Seger - Uszczelnienia statyczne</title>
 
     <link rel="icon" href="../../sources/favicon/favicon.png" type="image/png">
     <link
@@ -22,6 +22,34 @@
 
 <body>
     <nav class="nav">
+        <div class="nav-mobile">
+            <button onclick="" class="burger-icon"><img src="../../sources/svg/Burger Icon.svg" alt=""
+                    class="burger-icon-img"></button>
+
+            <div class="nav-mobile-active unactive">
+                <button onclick="" class="close-icon"><img src="../../sources/svg/Close.svg" alt=""
+                        class="close-icon-img"></button>
+                <img src="../../sources/img/logo/Seger - Logo jasne.svg" alt="" class="nav-logo">
+                <div class="nav-mobile-active-options">
+                    <a href="../../index.html#home" class="nav-mobile-option">Home</a>
+                    <a href="../../index.html#about-us" class="nav-mobile-option">O firmie</a>
+                    <a href="../../index.html#offers" class="nav-mobile-option">Oferta</a>
+                    <a href="../../index.html#contact" class="nav-mobile-option">Kontakt</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-desktop">
+            <a href="../../index.html#home"><img src="../../sources/img/logo/Seger - Logo ciemne bez napisu.svg"
+                    alt="Logo firmy Seger" class="nav-logo"></a>
+
+            <div class="nav-desktop-active">
+                <a href="../../index.html#about-us">O firmie</a>
+                <a href="#offers">Oferta</a>
+                <a href="../../index.html#gallery">Galeria</a>
+                <a href="../../index.html#contact">Kontakt</a>
+            </div>
+        </div>
     </nav>
     <div class="offer-description">
         <h1>Uszczelnienia statyczne</h1>
@@ -61,5 +89,6 @@
     </footer>
 
     <script src="../../js/import-components-offers.js"></script>
-    <script src="../../js/offers.js"></script>
+    <script src="../../js/navigation.js"></script>
+
 </body>

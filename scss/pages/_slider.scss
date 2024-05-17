@@ -1,5 +1,4 @@
 .h2-slider {
-	font-size: $Desktop-H2;
 	color: $Font-Color-1;
 	text-align: center;
 	padding: 25px;
@@ -108,7 +107,7 @@
 
 @media screen and (min-width: 769px) {
 	.slider {
-		padding: 64px;
+		padding: 0 64px 0 64px;
 
 		.slider-box {
 			min-height: 50vh;
