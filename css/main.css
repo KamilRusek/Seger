@@ -812,6 +812,9 @@ body li {
     font-weight: bold;
     letter-spacing: 2%;
   }
+  body h1.offer-h1 {
+    font-size: 40px;
+  }
   body h2 {
     font-size: 30px;
     color: rgb(0, 0, 0);
