@@ -255,9 +255,6 @@ header .header-info h1 {
   flex-direction: column;
   gap: 16px;
 }
-.about-us .quality-policy .quality-policy-text li {
-  list-style-position: inside;
-}
 .about-us .quality-policy .quality-policy-photo {
   display: flex;
   align-items: center;
@@ -439,6 +436,10 @@ header .header-info h1 {
   box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
 }
 
+.offers-offers-list {
+  padding-bottom: 48px;
+}
+
 @media screen and (min-width: 769px) {
   .offers h2 {
     padding: 0px;
@@ -480,8 +481,9 @@ header .header-info h1 {
     align-items: flex-start;
   }
   .offer-description .offer-description-offer img {
-    width: 50%;
-    height: 50%;
+    max-width: 300px; /* Maksymalna szerokość obrazu */
+    height: auto; /* Automatyczna wysokość, aby zachować proporcje */
+    border-radius: 15px;
   }
 }
 .contact {
@@ -782,10 +784,15 @@ body main {
 body h2 {
   font-size: 20px;
 }
-body p, body li, body a {
+body p,
+body li,
+body a {
   font-size: 15px;
   line-height: 150%;
   letter-spacing: 1px;
+}
+body li {
+  list-style-position: inside;
 }
 
 @media screen and (min-width: 769px) {

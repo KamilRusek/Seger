@@ -26,8 +26,9 @@
 
 		.offer-description-offer {
 			img {
-				width: 50%;
-				height: 50%;
+				max-width: 300px; /* Maksymalna szerokość obrazu */
+				height: auto; /* Automatyczna wysokość, aby zachować proporcje */
+				border-radius: 15px;
 			}
 		}
 	}
