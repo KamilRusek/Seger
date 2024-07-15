@@ -9,15 +9,15 @@
 	gap: 48px;
 	color: $Font-Color-1;
 
+	h3{
+		text-align: center;
+	}
+
 	.contact-text {
 		display: flex;
 		flex-direction: column;
 		gap: 48px;
 		padding: 0 16px 0 16px;
-
-		h3 {
-			text-align: center;
-		}
 
 		.contact-informations {
 			display: flex;

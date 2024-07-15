@@ -496,14 +496,14 @@ header .header-info h1 {
   gap: 48px;
   color: rgb(0, 0, 0);
 }
+.contact h3 {
+  text-align: center;
+}
 .contact .contact-text {
   display: flex;
   flex-direction: column;
   gap: 48px;
   padding: 0 16px 0 16px;
-}
-.contact .contact-text h3 {
-  text-align: center;
 }
 .contact .contact-text .contact-informations {
   display: flex;
@@ -818,6 +818,11 @@ body li {
   body h2 {
     font-size: 30px;
     color: rgb(0, 0, 0);
+  }
+  body h3 {
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 1px;
   }
   body h4 {
     font-size: 20px;
