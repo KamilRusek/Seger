@@ -42,7 +42,7 @@
   align-items: center;
 }
 .nav-mobile-active .nav-mobile-active-options a {
-  font-size: 48px;
+  font-size: 30px;
   color: #fffef5;
   text-decoration: none;
   font-weight: bold;
@@ -379,17 +379,18 @@ header .header-info h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px 16px 0px 16px;
   gap: 25px;
 }
-.offers .offers-list {
+
+.offers-list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding: 16px 0 16px 0;
   gap: 25px;
   color: rgb(0, 0, 0);
 }
-.offers .offers-list .offer {
+
+.offer {
   align-self: center;
   background-color: #fff;
   background-image: none;
@@ -399,7 +400,6 @@ header .header-info h1 {
   border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
   border-style: solid;
   border-width: 2px;
-  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
   box-sizing: border-box;
   color: #41403e;
   cursor: pointer;
@@ -421,18 +421,21 @@ header .header-info h1 {
   touch-action: manipulation;
   color: rgb(0, 0, 0);
 }
-.offers .offers-list .offer p {
+
+.offer p {
   font-family: "Merienda", cursive;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-size: 15px;
 }
-.offers .offers-list .offer:hover {
+
+.offer:hover {
   box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
 }
-.offers .offers-list .offer:focus {
+
+.offer:focus {
   box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
 }
 
@@ -449,11 +452,36 @@ header .header-info h1 {
     padding: 0 64px 0 64px;
     gap: 25px;
   }
-  .offers .offers-list {
+  .offers-list {
+    justify-content: center;
     margin: 50px 0 0 0;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 40px;
+  }
+  .offer {
+    box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  }
+}
+/* Dodajemy styl dla widoku mobilnego */
+@media screen and (max-width: 768px) {
+  .offers-list-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Płynne przewijanie na urządzeniach mobilnych */
+    width: 100vw; /* Zapewnia, że wrapper zajmuje całą szerokość widoku */
+    box-sizing: border-box;
+    padding: 0 16px; /* Dodaje padding do wrappera */
+  }
+  .offers-list {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap; /* Zapobiega zawijaniu elementów do nowego wiersza */
+  }
+  .offer {
+    flex: 0 0 auto; /* Umożliwia przewijanie elementów w poziomie */
+  }
+  .offers-description {
+    padding: 0 16px 0 16px;
   }
 }
 .offer-description {
