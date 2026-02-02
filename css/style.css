@@ -42,7 +42,13 @@ html {
 	background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('../img/company/company-1.jpeg');
 	background-size: cover;
 	background-position: center;
-	background-attachment: fixed;
+	background-attachment: scroll; /* Domyślnie scroll (dla telefonów) */
+}
+
+@media (min-width: 1024px) {
+	.hero-bg {
+		background-attachment: fixed;
+	}
 }
 
 /* 3. KOMPONENTY (Oczyszczone z konfliktów) */
