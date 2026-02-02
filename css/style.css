@@ -1,6 +1,5 @@
-/* css/style.css - WERSJA ZOPTYMALIZOWANA POD TAILWINDA */
+/* css/style.css - WERSJA BEZ POMARAŃCZOWEGO AKCENTU */
 
-/* 1. CZCIONKI (To zostawiamy, bo ładujesz je lokalnie) */
 body {
 	font-family: 'Inter', sans-serif;
 }
@@ -9,7 +8,7 @@ html {
 	scroll-behavior: smooth;
 }
 
-/* --- EXO 2 (Variable) --- */
+/* --- FONTY --- */
 @font-face {
 	font-family: 'Exo 2';
 	src: url('../fonts/exo2/Exo2-VariableFont_wght.ttf') format('truetype');
@@ -22,8 +21,6 @@ html {
 	font-weight: 100 900;
 	font-style: italic;
 }
-
-/* --- INTER (Variable) --- */
 @font-face {
 	font-family: 'Inter';
 	src: url('../fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
@@ -37,23 +34,22 @@ html {
 	font-style: italic;
 }
 
-/* 2. TŁO HERO (Zostawiamy, bo to specyficzny obrazek + gradient) */
+/* --- HERO BACKGROUND --- */
 .hero-bg {
 	background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('../img/company/company-1.jpeg');
 	background-size: cover;
 	background-position: center;
-	background-attachment: scroll; /* Domyślnie scroll (dla telefonów) */
+	background-attachment: scroll; /* Mobile fix */
 }
-
 @media (min-width: 1024px) {
 	.hero-bg {
 		background-attachment: fixed;
 	}
 }
 
-/* 3. KOMPONENTY (Oczyszczone z konfliktów) */
+/* --- KOMPONENTY --- */
 
-/* INPUTY - Zostawiamy customowy focus ring */
+/* Inputy - neutralny focus */
 .form-input {
 	width: 100%;
 	padding: 0.75rem 1rem;
@@ -64,31 +60,35 @@ html {
 		border-color 0.2s;
 }
 .form-input:focus {
-	box-shadow: 0 0 0 2px #ea580c; /* Orange-600 */
+	box-shadow: 0 0 0 2px #94a3b8; /* Slate-400 */
 	border-color: transparent;
 }
 
-/* PRZYCISKI - Zostawiamy, bo w HTML używasz klasy .btn-primary zamiast długich klas Tailwinda */
+/* PRZYCISKI - Nowy styl: Kremowy (#fffee2) z ciemnym tekstem */
 .btn-primary {
-	background-color: #ea580c;
-	color: white;
+	background-color: #fffee2;
+	color: #0f172a; /* Slate-900 */
 	border-radius: 0.5rem;
-	font-weight: 600;
-	transition: all 0.2s;
+	font-weight: 700;
+	transition: all 0.3s;
 	display: inline-block;
 	text-align: center;
-	box-shadow: 0 4px 6px -1px rgba(234, 88, 12, 0.3);
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 	padding: 0.75rem 1.5rem;
 	white-space: nowrap;
+	border: 1px solid transparent;
 }
+/* Hover: Białe tło + wyraźniejsza ramka */
 .btn-primary:hover {
-	background-color: #c2410c;
+	background-color: #ffffff;
+	border-color: #94a3b8; /* Slate-400 */
 	transform: scale(1.02);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-outline {
 	background-color: transparent;
-	border-width: 2px; /* Zostawiamy tylko grubość */
+	border-width: 2px;
 	border-style: solid;
 	border-radius: 0.5rem;
 	font-weight: 600;
@@ -98,10 +98,9 @@ html {
 }
 .btn-outline:hover {
 	transform: scale(1.02);
-	/* Kolory hovera też lepiej kontrolować w HTML klasami Tailwinda */
 }
 
-/* MENU LINKI */
+/* NAWIGACJA - Nowy styl hover (podkreślenie zamiast koloru) */
 .nav-link {
 	color: #475569; /* Slate-600 */
 	font-weight: 500;
@@ -109,15 +108,17 @@ html {
 	padding: 0.5rem;
 	cursor: pointer;
 }
-/* Tu naprawiamy konflikt dark mode - używamy @apply logicznie lub zostawiamy CSS */
 .dark .nav-link {
 	color: #cbd5e1; /* Slate-300 */
 }
-.nav-link:hover,
-.dark .nav-link:hover {
-	color: #ea580c;
+.nav-link:hover {
+	color: #0f172a; /* Slate-900 (Ciemny) */
+	text-decoration: underline;
+	text-underline-offset: 4px;
+	font-weight: 700;
 }
 
+/* JĘZYKI */
 .lang-btn {
 	cursor: pointer;
 	opacity: 0.6;
@@ -131,43 +132,38 @@ html {
 .lang-btn:hover,
 .lang-btn.active {
 	opacity: 1;
-	color: #ea580c;
+	color: #0f172a;
 	text-decoration: underline;
+	text-underline-offset: 4px;
 }
 
-/* KARTY PRODUKTÓW - TU BYŁ NAJWIĘKSZY PROBLEM 
-   Usunąłem tła (background-color) i kolory ramek.
-   Teraz o kolorach decydują klasy w HTML: "bg-slate-50 dark:bg-slate-800"
-*/
+/* KARTY PRODUKTÓW */
 .product-card {
 	border: 1px solid #e2e8f0;
 	border-radius: 0.75rem;
 	padding: 1rem;
 	display: flex;
 	flex-direction: column;
-	align-items: center; /* Centrowanie w poziomie */
-	justify-content: center; /* CENTROWANIE W PIONIE - TEGO BRAKOWAŁO */
+	align-items: center;
+	justify-content: center;
 	text-align: center;
-	height: 100%; /* Aby karty w rzędzie były równe */
+	height: 100%;
 	transition: all 0.3s ease;
 	cursor: default;
 }
-
 .dark .product-card {
 	border-color: #334155;
 }
-
 @media (min-width: 640px) {
 	.product-card {
 		padding: 1.5rem;
 	}
 }
-
-/* Zostawiamy tylko logikę hover, ale bez wymuszania białego tła na siłę w dark mode */
+/* Hover karty: Ciemna ramka w light mode, biała w dark mode */
 .product-card:hover {
 	transform: translateY(-5px);
 	box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-	border-color: #ea580c;
+	border-color: #0f172a;
 }
 
 .product-card i {
@@ -181,11 +177,9 @@ html {
 		margin-bottom: 0.75rem;
 	}
 }
-
 .product-card:hover i {
 	transform: scale(1.1);
 }
-
 .product-card h3 {
 	font-size: 0.9rem;
 	line-height: 1.2;
@@ -196,7 +190,7 @@ html {
 	}
 }
 
-/* KONTAKT, ANIMACJE, GALERIA - Bez zmian, jest OK */
+/* Pozostałe style */
 .contact-item {
 	display: flex;
 	align-items: center;
@@ -207,7 +201,6 @@ html {
 	text-align: center;
 	margin-right: 0.5rem;
 }
-
 .fade-in-up {
 	animation: fadeInUp 0.8s ease-out forwards;
 	opacity: 0;
@@ -228,7 +221,20 @@ html {
 .delay-200 {
 	animation-delay: 0.2s;
 }
-
 .gallery-item:hover img {
 	transform: scale(1.1);
+}
+
+/* --- DARK MODE OVERRIDES (Kluczowe dla nowego koloru) --- */
+.dark .nav-link:hover,
+.dark .lang-btn:hover,
+.dark .lang-btn.active {
+	color: #fffee2; /* Kremowy w ciemnym trybie */
+	text-decoration: underline;
+}
+.dark .product-card:hover {
+	border-color: #ffffff; /* Biała ramka w ciemnym trybie */
+}
+.dark .form-input:focus {
+	box-shadow: 0 0 0 2px #fffee2;
 }
