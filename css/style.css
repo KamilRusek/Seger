@@ -1,0 +1,228 @@
+/* css/style.css - WERSJA ZOPTYMALIZOWANA POD TAILWINDA */
+
+/* 1. CZCIONKI (To zostawiamy, bo ładujesz je lokalnie) */
+body {
+	font-family: 'Inter', sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* --- EXO 2 (Variable) --- */
+@font-face {
+	font-family: 'Exo 2';
+	src: url('../fonts/exo2/Exo2-VariableFont_wght.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Exo 2';
+	src: url('../fonts/exo2/Exo2-Italic-VariableFont_wght.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: italic;
+}
+
+/* --- INTER (Variable) --- */
+@font-face {
+	font-family: 'Inter';
+	src: url('../fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Inter';
+	src: url('../fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: italic;
+}
+
+/* 2. TŁO HERO (Zostawiamy, bo to specyficzny obrazek + gradient) */
+.hero-bg {
+	background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('../img/company/company-1.jpeg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+/* 3. KOMPONENTY (Oczyszczone z konfliktów) */
+
+/* INPUTY - Zostawiamy customowy focus ring */
+.form-input {
+	width: 100%;
+	padding: 0.75rem 1rem;
+	border-radius: 0.5rem;
+	outline: none;
+	transition:
+		box-shadow 0.2s,
+		border-color 0.2s;
+}
+.form-input:focus {
+	box-shadow: 0 0 0 2px #ea580c; /* Orange-600 */
+	border-color: transparent;
+}
+
+/* PRZYCISKI - Zostawiamy, bo w HTML używasz klasy .btn-primary zamiast długich klas Tailwinda */
+.btn-primary {
+	background-color: #ea580c;
+	color: white;
+	border-radius: 0.5rem;
+	font-weight: 600;
+	transition: all 0.2s;
+	display: inline-block;
+	text-align: center;
+	box-shadow: 0 4px 6px -1px rgba(234, 88, 12, 0.3);
+	padding: 0.75rem 1.5rem;
+	white-space: nowrap;
+}
+.btn-primary:hover {
+	background-color: #c2410c;
+	transform: scale(1.02);
+}
+
+.btn-outline {
+	background-color: transparent;
+	border-width: 2px; /* Zostawiamy tylko grubość */
+	border-style: solid;
+	border-radius: 0.5rem;
+	font-weight: 600;
+	transition: all 0.2s;
+	display: inline-block;
+	padding: 0.75rem 1.5rem;
+}
+.btn-outline:hover {
+	transform: scale(1.02);
+	/* Kolory hovera też lepiej kontrolować w HTML klasami Tailwinda */
+}
+
+/* MENU LINKI */
+.nav-link {
+	color: #475569; /* Slate-600 */
+	font-weight: 500;
+	transition: color 0.2s;
+	padding: 0.5rem;
+	cursor: pointer;
+}
+/* Tu naprawiamy konflikt dark mode - używamy @apply logicznie lub zostawiamy CSS */
+.dark .nav-link {
+	color: #cbd5e1; /* Slate-300 */
+}
+.nav-link:hover,
+.dark .nav-link:hover {
+	color: #ea580c;
+}
+
+.lang-btn {
+	cursor: pointer;
+	opacity: 0.6;
+	transition: 0.3s;
+	font-weight: 600;
+	padding: 0 4px;
+}
+.dark .lang-btn {
+	color: #cbd5e1;
+}
+.lang-btn:hover,
+.lang-btn.active {
+	opacity: 1;
+	color: #ea580c;
+	text-decoration: underline;
+}
+
+/* KARTY PRODUKTÓW - TU BYŁ NAJWIĘKSZY PROBLEM 
+   Usunąłem tła (background-color) i kolory ramek.
+   Teraz o kolorach decydują klasy w HTML: "bg-slate-50 dark:bg-slate-800"
+*/
+.product-card {
+	border: 1px solid #e2e8f0;
+	border-radius: 0.75rem;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Centrowanie w poziomie */
+	justify-content: center; /* CENTROWANIE W PIONIE - TEGO BRAKOWAŁO */
+	text-align: center;
+	height: 100%; /* Aby karty w rzędzie były równe */
+	transition: all 0.3s ease;
+	cursor: default;
+}
+
+.dark .product-card {
+	border-color: #334155;
+}
+
+@media (min-width: 640px) {
+	.product-card {
+		padding: 1.5rem;
+	}
+}
+
+/* Zostawiamy tylko logikę hover, ale bez wymuszania białego tła na siłę w dark mode */
+.product-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+	border-color: #ea580c;
+}
+
+.product-card i {
+	font-size: 1.5rem;
+	margin-bottom: 0.5rem;
+	transition: transform 0.3s;
+}
+@media (min-width: 640px) {
+	.product-card i {
+		font-size: 2rem;
+		margin-bottom: 0.75rem;
+	}
+}
+
+.product-card:hover i {
+	transform: scale(1.1);
+}
+
+.product-card h3 {
+	font-size: 0.9rem;
+	line-height: 1.2;
+}
+@media (min-width: 640px) {
+	.product-card h3 {
+		font-size: 1rem;
+	}
+}
+
+/* KONTAKT, ANIMACJE, GALERIA - Bez zmian, jest OK */
+.contact-item {
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+}
+.contact-item i {
+	width: 2rem;
+	text-align: center;
+	margin-right: 0.5rem;
+}
+
+.fade-in-up {
+	animation: fadeInUp 0.8s ease-out forwards;
+	opacity: 0;
+}
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.delay-100 {
+	animation-delay: 0.1s;
+}
+.delay-200 {
+	animation-delay: 0.2s;
+}
+
+.gallery-item:hover img {
+	transform: scale(1.1);
+}

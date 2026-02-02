@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/svg+xml" href="img/logo/logo - dark.svg">
+
+    <title data-i18n="pp_main_title">Polityka Prywatności - Seger Jastrzębie-Zdrój</title>
+    <meta name="robots" content="noindex, follow">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        // Wyłącza ostrzeżenia w konsoli
+        window.tailwind = {
+            config: {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            darkbg: '#0f172a',
+                            darkcard: '#1e293b',
+                        },
+                        fontFamily: {
+                            sans: ['Inter', 'sans-serif'],
+                            display: ['"Exo 2"', 'sans-serif'],
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-50 text-slate-800 dark:bg-darkbg dark:text-gray-200 transition-colors duration-300 font-sans">
+
+    <nav class="bg-white dark:bg-darkcard shadow-md fixed w-full z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="hover:opacity-80 transition" aria-label="Strona główna">
+                        <img src="img/logo/logo - light.svg" alt="Seger Jastrzębie Logo"
+                            class="h-10 w-auto dark:hidden block">
+                        <img src="img/logo/logo - dark.svg" alt="Seger Jastrzębie Logo"
+                            class="h-10 w-auto hidden dark:block">
+                    </a>
+                </div>
+
+                <div class="hidden lg:flex space-x-6 items-center font-display">
+                    <a href="index.html#home" class="nav-link text-lg" data-i18n="nav_home">Start</a>
+                    <a href="index.html#o-nas" class="nav-link text-lg" data-i18n="nav_about">O firmie</a>
+                    <a href="index.html#oferta" class="nav-link text-lg" data-i18n="nav_offer">Oferta</a>
+                    <a href="index.html#galeria" class="nav-link text-lg" data-i18n="nav_gallery">Galeria</a>
+                    <a href="index.html#kontakt" class="btn-primary" data-i18n="nav_contact">Kontakt</a>
+
+                    <button id="theme-toggle" aria-label="Przełącz motyw ciemny/jasny"
+                        class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-moon text-gray-600 block dark:hidden"></i>
+                        <i class="fas fa-sun text-yellow-400 hidden dark:block"></i>
+                    </button>
+
+                    <div class="flex space-x-2 border-l pl-4 border-gray-300 dark:border-gray-600 text-base font-sans">
+                        <button onclick="setLanguage('pl')" class="lang-btn active hover:text-orange-500 transition"
+                            id="btn-pl" aria-label="Język polski">PL</button>
+                        <button onclick="setLanguage('en')" class="lang-btn hover:text-orange-500 transition"
+                            id="btn-en" aria-label="Język angielski">EN</button>
+                        <button onclick="setLanguage('cz')" class="lang-btn hover:text-orange-500 transition"
+                            id="btn-cz" aria-label="Język czeski">CZ</button>
+                        <button onclick="setLanguage('sk')" class="lang-btn hover:text-orange-500 transition"
+                            id="btn-sk" aria-label="Język słowacki">SK</button>
+                    </div>
+                </div>
+
+                <div class="lg:hidden flex items-center space-x-4">
+                    <button id="theme-toggle-mobile" aria-label="Przełącz motyw ciemny/jasny"
+                        class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-moon text-gray-600 block dark:hidden"></i>
+                        <i class="fas fa-sun text-yellow-400 hidden dark:block"></i>
+                    </button>
+                    <button id="mobile-menu-btn" aria-label="Otwórz menu nawigacji"
+                        class="text-slate-600 dark:text-white p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-white dark:bg-darkcard border-t dark:border-gray-700 absolute w-full shadow-lg font-display">
+            <a href="index.html#home"
+                class="block py-4 px-6 border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+                data-i18n="nav_home">Start</a>
+            <a href="index.html#o-nas"
+                class="block py-4 px-6 border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+                data-i18n="nav_about">O firmie</a>
+            <a href="index.html#oferta"
+                class="block py-4 px-6 border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+                data-i18n="nav_offer">Oferta</a>
+            <a href="index.html#galeria"
+                class="block py-4 px-6 border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+                data-i18n="nav_gallery">Galeria</a>
+            <a href="index.html#kontakt"
+                class="block py-4 px-6 border-b dark:border-gray-700 text-orange-600 font-bold hover:bg-gray-50 dark:hover:bg-gray-700"
+                data-i18n="nav_contact">Kontakt</a>
+
+            <div class="py-4 px-6 flex justify-center space-x-6 bg-gray-50 dark:bg-slate-800 font-sans">
+                <button onclick="setLanguage('pl')" class="lang-btn font-bold text-lg cursor-pointer">PL</button>
+                <button onclick="setLanguage('en')" class="lang-btn font-bold text-lg cursor-pointer">EN</button>
+                <button onclick="setLanguage('cz')" class="lang-btn font-bold text-lg cursor-pointer">CZ</button>
+                <button onclick="setLanguage('sk')" class="lang-btn font-bold text-lg cursor-pointer">SK</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 px-4">
+        <div
+            class="max-w-4xl mx-auto bg-white dark:bg-darkcard p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100 dark:border-slate-800">
+            <h1 class="font-display text-3xl md:text-4xl font-bold mb-8 text-slate-900 dark:text-white border-b pb-4 border-gray-200 dark:border-gray-700"
+                data-i18n="pp_main_title">Polityka Prywatności</h1>
+
+            <div class="space-y-6 text-slate-600 dark:text-gray-400 leading-relaxed text-lg">
+                <p data-i18n="pp_intro">
+                    Niniejsza Polityka Prywatności określa zasady przetwarzania i ochrony danych osobowych
+                    przekazywanych przez Użytkowników w związku z korzystaniem ze strony internetowej
+                    segerjastrzebiezdroj.pl.
+                </p>
+
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4 font-display"
+                    data-i18n="pp_1_title">1. Administrator Danych Osobowych</h2>
+                <p data-i18n="pp_1_text">
+                    Administratorem danych osobowych zawartych w serwisie jest firma:<br>
+                    <strong>SZKUDLAREK PIOTR FIRMA HANDLOWO-USŁUGOWA "SEGER"</strong><br>
+                    ul. Pszczyńska 305, 44-335 Jastrzębie-Zdrój<br>
+                    NIP: 6330012713<br>
+                    REGON: 271959072
+                </p>
+
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4 font-display"
+                    data-i18n="pp_2_title">2. Cele i zakres zbierania danych</h2>
+                <p data-i18n="pp_2_text">
+                    Administrator przetwarza dane osobowe Użytkowników (Imię i Nazwisko, Adres E-mail) wyłącznie w celu:
+                </p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li data-i18n="pp_2_li1">Udzielenia odpowiedzi na zapytania przesłane przez formularz kontaktowy.
+                    </li>
+                    <li data-i18n="pp_2_li2">Przedstawienia oferty handlowej na życzenie Użytkownika.</li>
+                </ul>
+                <p class="mt-4" data-i18n="pp_2_note">
+                    Podanie danych jest dobrowolne, ale niezbędne do przetworzenia zapytania.
+                </p>
+
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4 font-display"
+                    data-i18n="pp_3_title">3. Odbiorcy danych</h2>
+                <p data-i18n="pp_3_text">
+                    W celu zapewnienia prawidłowego funkcjonowania formularza kontaktowego, Administrator korzysta z
+                    usług zewnętrznego podmiotu przetwarzającego: <strong>FormSubmit.co</strong>. Dane wpisane w
+                    formularzu są przesyłane bezpiecznym połączeniem (SSL) i przetwarzane wyłącznie w celu dostarczenia
+                    wiadomości e-mail do Administratora.
+                </p>
+
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4 font-display"
+                    data-i18n="pp_4_title">4. Pliki Cookies (Ciasteczka)</h2>
+                <p data-i18n="pp_4_text">
+                    Strona wykorzystuje pliki cookies w celu:
+                </p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li data-i18n="pp_4_li1">Dostosowania zawartości strony do preferencji Użytkownika (np. zapamiętanie
+                        wybranego motywu jasnego/ciemnego).</li>
+                    <li data-i18n="pp_4_li2">Tworzenia anonimowych statystyk, które pomagają zrozumieć, w jaki sposób
+                        Użytkownicy korzystają ze strony.</li>
+                </ul>
+                <p class="mt-4" data-i18n="pp_4_note">
+                    Użytkownik ma możliwość ograniczenia lub wyłączenia dostępu plików cookies do swojego urządzenia w
+                    ustawieniach przeglądarki internetowej.
+                </p>
+
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4 font-display"
+                    data-i18n="pp_5_title">5. Prawa Użytkownika</h2>
+                <p data-i18n="pp_5_text">
+                    Zgodnie z RODO, Użytkownikowi przysługuje prawo do:
+                </p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li data-i18n="pp_5_li1">Dostępu do treści swoich danych oraz ich poprawiania.</li>
+                    <li data-i18n="pp_5_li2">Usunięcia danych ("prawo do bycia zapomnianym").</li>
+                    <li data-i18n="pp_5_li3">Ograniczenia przetwarzania danych.</li>
+                    <li data-i18n="pp_5_li4">Wniesienia sprzeciwu wobec przetwarzania danych.</li>
+                </ul>
+                <p class="mt-4" data-i18n="pp_5_note">
+                    W celu realizacji powyższych praw prosimy o kontakt pod adresem e-mail: <a
+                        href="mailto:seger@segerjastrzebiezdroj.pl"
+                        class="text-orange-600 hover:underline">seger@segerjastrzebiezdroj.pl</a>.
+                </p>
+
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4 font-display"
+                    data-i18n="pp_6_title">6. Bezpieczeństwo</h2>
+                <p data-i18n="pp_6_text">
+                    Administrator stosuje środki techniczne i organizacyjne zapewniające ochronę przetwarzanych danych
+                    osobowych odpowiednią do zagrożeń oraz kategorii danych objętych ochroną, a w szczególności
+                    zabezpiecza dane przed ich udostępnieniem osobom nieupoważnionym. Strona używa szyfrowanego
+                    połączenia SSL.
+                </p>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 text-center">
+                <a href="index.html" class="btn-primary font-display text-lg" data-i18n="pp_back">Powrót do strony
+                    głównej</a>
+            </div>
+        </div>
+    </main>
+
+    <footer
+        class="bg-slate-900 dark:bg-black text-slate-400 pt-16 pb-12 border-t border-slate-800 text-center font-sans">
+        <div class="flex justify-center gap-8 text-2xl leading-none mb-4">
+            <a href="https://www.facebook.com/profile.php?id=61558801223063" target="_blank" rel="noopener noreferrer"
+                class="text-slate-500 hover:text-blue-500 transition-all transform hover:-translate-y-1"
+                aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://share.google/UjQ5cj6ti2x6Qoxn4" target="_blank" rel="noopener noreferrer"
+                class="text-slate-500 hover:text-red-500 transition-all transform hover:-translate-y-1"
+                aria-label="Google">
+                <i class="fab fa-google"></i>
+            </a>
+        </div>
+
+        <div class="text-white font-display font-semibold text-lg tracking-widest uppercase leading-none mb-4">
+            © <span id="current-year"></span> F.H.U. SEGER
+        </div>
+
+        <div class="text-[13px] opacity-40 tracking-tight leading-none">
+            <span data-i18n="footer_designed">Designed by</span>
+            <span class="font-bold text-slate-300 ml-1 uppercase">Kamil Rusek</span>
+        </div>
+    </footer>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/svg+xml" href="img/logo/logo - dark.svg">
+
+    <title data-i18n="meta_title">Seger Jastrzębie-Zdrój - Hurtownia Przemysłowa, Uszczelnienia, Łożyska</title>
+    <meta name="description" data-i18n="meta_desc"
+        content="Hurtownia artykułów przemysłowych Seger w Jastrzębiu-Zdroju. Oferujemy uszczelnienia techniczne, łożyska, chemię przemysłową i elementy złączne. Sprawdź nas!">
+    <link rel="canonical" href="https://segerjastrzebiezdroj.pl/" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WholesaleStore",
+      "name": "F.H.U. SEGER",
+      "image": "https://segerjastrzebiezdroj.pl/img/logo/logo - dark.svg",
+      "telephone": "+48324711098",
+      "email": "seger@segerjastrzebiezdroj.pl",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Pszczyńska 305",
+        "addressLocality": "Jastrzębie-Zdrój",
+        "postalCode": "44-335",
+        "addressCountry": "PL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 49.9566,
+        "longitude": 18.5905
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "16:00"
+      },
+      "url": "https://segerjastrzebiezdroj.pl",
+      "priceRange": "$$"
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        // Wyłącza ostrzeżenia w konsoli
+        window.tailwind = {
+            config: {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            darkbg: '#0f172a',
+                            darkcard: '#1e293b',
+                        },
+                        fontFamily: {
+                            sans: ['Inter', 'sans-serif'],
+                            display: ['"Exo 2"', 'sans-serif'],
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-50 text-slate-800 dark:bg-darkbg dark:text-gray-200 transition-colors duration-300 font-sans">
+
+    <nav class="bg-white dark:bg-darkcard shadow-md fixed w-full z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="hover:opacity-80 transition" aria-label="Strona główna">
+                        <img src="img/logo/logo - light.svg" alt="Seger Jastrzębie Logo"
+                            class="h-10 w-auto dark:hidden block">
+                        <img src="img/logo/logo - dark.svg" alt="Seger Jastrzębie Logo"
+                            class="h-10 w-auto hidden dark:block">
+                    </a>
+                </div>
+
+                <div class="hidden lg:flex space-x-6 items-center font-display">
+                    <a href="#home" class="nav-link text-lg" data-i18n="nav_home">Start</a>
+                    <a href="#o-nas" class="nav-link text-lg" data-i18n="nav_about">O firmie</a>
+                    <a href="#oferta" class="nav-link text-lg" data-i18n="nav_offer">Oferta</a>
+                    <a href="#galeria" class="nav-link text-lg" data-i18n="nav_gallery">Galeria</a>
+                    <a href="#kontakt" class="btn-primary" data-i18n="nav_contact">Kontakt</a>
+
+                    <button id="theme-toggle" aria-label="Przełącz motyw ciemny/jasny"
+                        class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-moon text-gray-600 block dark:hidden"></i>
+                        <i class="fas fa-sun text-yellow-400 hidden dark:block"></i>
+                    </button>
+
+                    <div class="flex space-x-2 border-l pl-4 border-gray-300 dark:border-gray-600 text-base font-sans">
+                        <button onclick="setLanguage('pl')" class="lang-btn active hover:text-orange-500 transition"
+                            id="btn-pl" aria-label="Język polski">PL</button>
+                        <button onclick="setLanguage('en')" class="lang-btn hover:text-orange-500 transition"
+                            id="btn-en" aria-label="Język angielski">EN</button>
+                        <button onclick="setLanguage('cz')" class="lang-btn hover:text-orange-500 transition"
+                            id="btn-cz" aria-label="Język czeski">CZ</button>
+                        <button onclick="setLanguage('sk')" class="lang-btn hover:text-orange-500 transition"
+                            id="btn-sk" aria-label="Język słowacki">SK</button>
+                    </div>
+                </div>
+
+                <div class="lg:hidden flex items-center space-x-4">
+                    <button id="theme-toggle-mobile" aria-label="Przełącz motyw ciemny/jasny"
+                        class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-moon text-gray-600 block dark:hidden"></i>
+                        <i class="fas fa-sun text-yellow-400 hidden dark:block"></i>
+                    </button>
+                    <button id="mobile-menu-btn" aria-label="Otwórz menu nawigacji"
+                        class="text-slate-600 dark:text-white p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-white dark:bg-darkcard border-t dark:border-gray-700 absolute w-full shadow-lg font-display">
+            <a href="#home"
+                class="block py-4 px-6 border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+                data-i18n="nav_home">Start</a>
+            <a href="#o-nas"
+                class="block py-4 px-6 border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+                data-i18n="nav_about">O firmie</a>
+            <a href="#oferta"
+                class="block py-4 px-6 border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+                data-i18n="nav_offer">Oferta</a>
+            <a href="#galeria"
+                class="block py-4 px-6 border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+                data-i18n="nav_gallery">Galeria</a>
+            <a href="#kontakt"
+                class="block py-4 px-6 border-b dark:border-gray-700 text-orange-600 font-bold hover:bg-gray-50 dark:hover:bg-gray-700"
+                data-i18n="nav_contact">Kontakt</a>
+
+            <div class="py-4 px-6 flex justify-center space-x-6 bg-gray-50 dark:bg-slate-800 font-sans">
+                <button onclick="setLanguage('pl')" class="lang-btn font-bold text-lg cursor-pointer">PL</button>
+                <button onclick="setLanguage('en')" class="lang-btn font-bold text-lg cursor-pointer">EN</button>
+                <button onclick="setLanguage('cz')" class="lang-btn font-bold text-lg cursor-pointer">CZ</button>
+                <button onclick="setLanguage('sk')" class="lang-btn font-bold text-lg cursor-pointer">SK</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home"
+            class="relative hero-bg h-screen min-h-[500px] flex items-center justify-center text-center px-4 pt-20">
+            <div class="max-w-5xl mx-auto text-white p-6 rounded-xl bg-black/40 backdrop-blur-sm z-10 relative">
+                <h1 class="font-display font-extrabold mb-6 leading-tight fade-in-up">
+                    <span class="block text-orange-500 text-5xl md:text-7xl mb-4 tracking-tight drop-shadow-md">Seger
+                        Jastrzębie-Zdrój</span>
+                    <span class="block text-3xl md:text-5xl text-white drop-shadow-lg"
+                        data-i18n="hero_subtitle">Hurtownia
+                        artykułów przemysłowych<br>i uszczelnień technicznych</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-gray-100 mb-10 max-w-2xl mx-auto fade-in-up delay-100 shadow-black drop-shadow-md font-sans"
+                    data-i18n="hero_desc">
+                    Kompleksowe zaopatrzenie przemysłu i motoryzacji. Fachowa obsługa, dostawa oraz wysyłka.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up delay-200 font-display">
+                    <a href="#oferta" class="btn-primary text-lg" data-i18n="btn_check_offer">Sprawdź ofertę</a>
+                    <a href="#kontakt" class="btn-outline text-lg" data-i18n="btn_contact_us">Skontaktuj się</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="o-nas" class="py-20 bg-gray-50 dark:bg-darkbg transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center mb-16">
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white"
+                        data-i18n="about_title">O naszej firmie</h2>
+                    <div class="w-24 h-1 bg-orange-600 mx-auto rounded"></div>
+                    <p class="mt-6 text-slate-600 dark:text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto font-sans"
+                        data-i18n="about_text">
+                        Od momentu rozpoczęcia swojej działalności oferujemy swoim klientom fachową obsługę, dostawę
+                        oraz
+                        wysyłkę uszczelnień technicznych, pierścieni zabezpieczających oraz bogaty asorytment
+                        materiałowy
+                        wykorzystywany w motoryzacji, w ciężkich maszynach przemysłowych, maszynach rolniczych,
+                        kolejnictwie, armaturze sanitarnej, chemicznej i gazowej, obrabiarkach oraz w maszynach i
+                        urządzeniach wydobywczych.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div
+                        class="bg-white dark:bg-slate-800 p-8 rounded-xl border-l-4 border-l-orange-600 shadow-xl ring-1 ring-gray-100 dark:ring-slate-700">
+                        <h3
+                            class="font-display text-2xl font-bold mb-6 flex items-center text-slate-900 dark:text-white">
+                            <i class="fas fa-award text-orange-500 mr-3"></i>
+                            <span data-i18n="policy_title">Polityka Jakości</span>
+                        </h3>
+                        <ul class="space-y-4 text-slate-700 dark:text-gray-300 font-sans">
+                            <li class="flex items-start">
+                                <span
+                                    class="flex-shrink-0 w-6 h-6 flex items-center justify-center mr-3 mt-1 text-orange-500">
+                                    <i class="fas fa-check text-sm"></i>
+                                </span>
+                                <span data-i18n="policy_1">Stosowanie wymagań prawnych w ramach prowadzonej
+                                    działalności.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span
+                                    class="flex-shrink-0 w-6 h-6 flex items-center justify-center mr-3 mt-1 text-orange-500">
+                                    <i class="fas fa-check text-sm"></i>
+                                </span>
+                                <span data-i18n="policy_2">Wdrażanie i utrzymywanie polityki jakości na wszystkich
+                                    szczeblach organizacyjnych w firmie.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span
+                                    class="flex-shrink-0 w-6 h-6 flex items-center justify-center mr-3 mt-1 text-orange-500">
+                                    <i class="fas fa-check text-sm"></i>
+                                </span>
+                                <span data-i18n="policy_3">Rozpoznawanie obecnych i przyszłych potrzeb i oczekiwań
+                                    klientów
+                                    przez nieustanną obserwację i badanie rynku.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span
+                                    class="flex-shrink-0 w-6 h-6 flex items-center justify-center mr-3 mt-1 text-orange-500">
+                                    <i class="fas fa-check text-sm"></i>
+                                </span>
+                                <span data-i18n="policy_4">Odpowiedzialność każdego pracownika za jakość pracy na swoim
+                                    stanowisku pracy.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span
+                                    class="flex-shrink-0 w-6 h-6 flex items-center justify-center mr-3 mt-1 text-orange-500">
+                                    <i class="fas fa-check text-sm"></i>
+                                </span>
+                                <span data-i18n="policy_5">Uzyskiwanie i utrwalanie satysfakcji klientów przejawiające
+                                    się w
+                                    przyszłości ponownymi zakupami.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-slate-800 p-8 rounded-xl border-l-4 border-l-blue-600 shadow-xl ring-1 ring-gray-100 dark:ring-slate-700 flex flex-col justify-center">
+                        <ul class="space-y-4 text-slate-700 dark:text-gray-300 font-sans">
+                            <li class="flex items-start">
+                                <span
+                                    class="flex-shrink-0 w-6 h-6 flex items-center justify-center mr-3 mt-1 text-blue-500">
+                                    <i class="fas fa-check text-sm"></i>
+                                </span>
+                                <span data-i18n="policy_6">Oferowanie wyrobów o wysokiej jakości, po atrakcyjnych
+                                    cenach.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span
+                                    class="flex-shrink-0 w-6 h-6 flex items-center justify-center mr-3 mt-1 text-blue-500">
+                                    <i class="fas fa-check text-sm"></i>
+                                </span>
+                                <span data-i18n="policy_7">Oferowanie wyrobów, produkowanych przez sprawdzonych i
+                                    kwalifikowanych dostawców.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span
+                                    class="flex-shrink-0 w-6 h-6 flex items-center justify-center mr-3 mt-1 text-blue-500">
+                                    <i class="fas fa-check text-sm"></i>
+                                </span>
+                                <span data-i18n="policy_8">Stosowanie elementów systemu zarządzania jakością zgodnego z
+                                    wymaganiami normy PN-EN ISO 9001.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span
+                                    class="flex-shrink-0 w-6 h-6 flex items-center justify-center mr-3 mt-1 text-blue-500">
+                                    <i class="fas fa-check text-sm"></i>
+                                </span>
+                                <span data-i18n="policy_9">Doskonalenie systemu zarządzania jakością.</span>
+                            </li>
+                        </ul>
+                        <div
+                            class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 flex items-center justify-around text-center font-display">
+                            <div>
+                                <div class="text-3xl font-bold text-slate-900 dark:text-white">20+</div>
+                                <div class="text-sm text-slate-500 dark:text-gray-400 font-sans" data-i18n="stat_years">
+                                    Lat
+                                    na rynku</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-slate-900 dark:text-white">5000+</div>
+                                <div class="text-sm text-slate-500 dark:text-gray-400 font-sans"
+                                    data-i18n="stat_products">
+                                    Produktów</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="oferta" class="py-24 bg-white dark:bg-slate-950 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="font-display text-3xl font-bold text-slate-900 dark:text-white mb-4"
+                        data-i18n="offer_title">
+                        Nasza oferta</h2>
+                    <div class="w-24 h-1 bg-orange-600 mx-auto rounded"></div>
+                    <p class="mt-6 text-slate-600 dark:text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto font-sans"
+                        data-i18n="offer_intro">
+                        Nasza oferta obejmuje szeroki wybór wysokiej jakości uszczelek, taśm uszczelniających oraz
+                        innych
+                        produktów niezbędnych do skutecznego zabezpieczenia różnorodnych konstrukcji. Zapraszamy do
+                        zapoznania się z naszą ofertą i do eksploracji poszczególnych kategorii produktowych, aby
+                        znaleźć
+                        rozwiązania idealnie dopasowane do Twoich potrzeb. Wierzymy, że nasze produkty pomogą Ci w
+                        skutecznym zabezpieczeniu i termoizolacji różnorodnych konstrukcji.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6 font-display auto-rows-fr"
+                    id="products-grid">
+
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center">
+                        <i class="fas fa-circle-notch text-orange-500 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_static" class="text-sm sm:text-base font-semibold">Uszczelnienia statyczne
+                            (O-ringi)</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center">
+                        <i class="fas fa-sync text-blue-600 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_rotary" class="text-sm sm:text-base font-semibold">Uszczelnienia do ruchów
+                            obrotowych</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center">
+                        <i class="fas fa-arrows-alt-v text-blue-600 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_recip" class="text-sm sm:text-base font-semibold">Uszczelnienia do ruchów
+                            posuwisto-zwrotnych</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center">
+                        <i class="fas fa-ring text-yellow-600 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_copper" class="text-sm sm:text-base font-semibold">Uszczelki miedziane</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center">
+                        <i class="fas fa-border-style text-gray-500 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_edge" class="text-sm sm:text-base font-semibold">Uszczelki krawędziowe</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center">
+                        <i class="fas fa-cogs text-gray-500 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_goetze" class="text-sm sm:text-base font-semibold">Mechaniczne uszczelnienia
+                            ślizgowe Federal-Mogul Goetze</h3>
+                    </div>
+
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-recycle text-slate-800 dark:text-gray-400 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_belts" class="text-sm sm:text-base font-semibold">Pasy napędowe</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-ring text-slate-500 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_seger" class="text-sm sm:text-base font-semibold">Osadcze pierścienie
+                            sprężynujące</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-fill-drip text-yellow-500 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_glues" class="text-sm sm:text-base font-semibold">Kleje techniczne</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-dot-circle text-blue-800 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_bearings" class="text-sm sm:text-base font-semibold">Łożyska</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-bacon text-gray-500 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_packing" class="text-sm sm:text-base font-semibold">Szczeliwa plecione</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-square text-green-600 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_sheets" class="text-sm sm:text-base font-semibold">Płyty uszczelkarskie</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-bullseye text-gray-500 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_spiral" class="text-sm sm:text-base font-semibold">Uszczelki spiralne typu
+                            Spiratem</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-layer-group text-blue-600 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_multi" class="text-sm sm:text-base font-semibold">Uszczelnienia
+                            wielokrawędziowe
+                        </h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-temperature-high text-red-600 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_thermal" class="text-sm sm:text-base font-semibold">Termoizolacje</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-compact-disc text-gray-600 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_friction" class="text-sm sm:text-base font-semibold">Okładziny cierne</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-expand-arrows-alt text-blue-400 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_compensators" class="text-sm sm:text-base font-semibold">Kompensatory
+                            tkaninowe
+                        </h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-eraser text-slate-700 dark:text-gray-400 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_rubber" class="text-sm sm:text-base font-semibold">Płyty i wyroby gumowe
+                        </h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-tint text-blue-500 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_hoses" class="text-sm sm:text-base font-semibold">Węże przemysłowe i
+                            akcesoria
+                        </h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-compress-alt text-green-700 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_vibro" class="text-sm sm:text-base font-semibold">Wibroizolatory</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-dna text-gray-500 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_springs" class="text-sm sm:text-base font-semibold">Sprężyny</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-link text-gray-500 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_galla" class="text-sm sm:text-base font-semibold">Łańcuchy Galla</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-anchor text-slate-800 dark:text-gray-400 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_ropes" class="text-sm sm:text-base font-semibold">Liny i zawiesia</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-oil-can text-slate-800 dark:text-gray-400 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_oils" class="text-sm sm:text-base font-semibold">Oleje i smary</h3>
+                    </div>
+                    <div
+                        class="product-card group bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700 flex flex-col h-full items-center justify-center p-6 text-center hidden lg:flex offer-hidden-mobile">
+                        <i class="fas fa-bolt text-gray-500 text-2xl mb-3"></i>
+                        <h3 data-i18n="prod_fasteners" class="text-sm sm:text-base font-semibold">Elementy złączne</h3>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center lg:hidden">
+                    <button id="btn-offers-toggle"
+                        onclick="toggleSection('oferta', 'btn-offers-toggle', 'offer-hidden-mobile', 'flex')"
+                        class="btn-outline py-2 px-6 text-sm font-display border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300"
+                        data-expanded="false">
+                        <span data-i18n="show_more">Pokaż więcej</span> <i class="fas fa-chevron-down ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="py-20 bg-gray-50 dark:bg-darkbg transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="font-display text-3xl font-bold text-slate-900 dark:text-white mb-4"
+                        data-i18n="gallery_title">Galeria zdjęć</h2>
+                    <div class="w-24 h-1 bg-orange-600 mx-auto rounded"></div>
+                    <p class="mt-6 text-slate-600 dark:text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto font-sans"
+                        data-i18n="gallery_intro">
+                        Znajdziesz tutaj wszystko, co niezbędne do skutecznego uszczelnienia - od różnego rodzaju
+                        uszczelek
+                        (oringi, simeringi), przez taśmy uszczelniające, po specjalistyczne produkty do izolacji
+                        termicznej.
+                        Przeglądając naszą galerię, zauważysz również, że oferujemy szeroki wybór produktów
+                        dostosowanych do
+                        różnych zastosowań i branż. Bez względu na to, czy potrzebujesz uszczelek do zastosowań
+                        przemysłowych, czy produktów do domowych napraw - mamy wszystko, czego potrzebujesz, aby
+                        zapewnić
+                        kompleksową obsługę.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="gallery-grid">
+
+                    <div
+                        class="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-lg aspect-square group bg-white dark:bg-slate-800">
+                        <img src="img/gallery/1.jpeg" alt="Galeria Seger"
+                            class="w-full h-full object-cover transition transform duration-500 group-hover:scale-110"
+                            loading="lazy" width="400" height="400" onclick="openModal(this.src)">
+                    </div>
+                    <div
+                        class="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-lg aspect-square group bg-white dark:bg-slate-800">
+                        <img src="img/gallery/2.jpeg" alt="Galeria Seger"
+                            class="w-full h-full object-cover transition transform duration-500 group-hover:scale-110"
+                            loading="lazy" width="400" height="400" onclick="openModal(this.src)">
+                    </div>
+                    <div
+                        class="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-lg aspect-square group bg-white dark:bg-slate-800">
+                        <img src="img/gallery/3.jpeg" alt="Galeria Seger"
+                            class="w-full h-full object-cover transition transform duration-500 group-hover:scale-110"
+                            loading="lazy" width="400" height="400" onclick="openModal(this.src)">
+                    </div>
+                    <div
+                        class="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-lg aspect-square group bg-white dark:bg-slate-800">
+                        <img src="img/gallery/4.jpeg" alt="Galeria Seger"
+                            class="w-full h-full object-cover transition transform duration-500 group-hover:scale-110"
+                            loading="lazy" width="400" height="400" onclick="openModal(this.src)">
+                    </div>
+
+                    <div
+                        class="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-lg aspect-square group bg-white dark:bg-slate-800 hidden lg:block gallery-hidden-mobile">
+                        <img src="img/gallery/5.jpeg" alt="Galeria Seger"
+                            class="w-full h-full object-cover transition transform duration-500 group-hover:scale-110"
+                            loading="lazy" width="400" height="400" onclick="openModal(this.src)">
+                    </div>
+                    <div
+                        class="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-lg aspect-square group bg-white dark:bg-slate-800 hidden lg:block gallery-hidden-mobile">
+                        <img src="img/gallery/6.jpeg" alt="Galeria Seger"
+                            class="w-full h-full object-cover transition transform duration-500 group-hover:scale-110"
+                            loading="lazy" width="400" height="400" onclick="openModal(this.src)">
+                    </div>
+                    <div
+                        class="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-lg aspect-square group bg-white dark:bg-slate-800 hidden lg:block gallery-hidden-mobile">
+                        <img src="img/gallery/7.jpeg" alt="Galeria Seger"
+                            class="w-full h-full object-cover transition transform duration-500 group-hover:scale-110"
+                            loading="lazy" width="400" height="400" onclick="openModal(this.src)">
+                    </div>
+                    <div
+                        class="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-lg aspect-square group bg-white dark:bg-slate-800 hidden lg:block gallery-hidden-mobile">
+                        <img src="img/gallery/8.jpeg" alt="Galeria Seger"
+                            class="w-full h-full object-cover transition transform duration-500 group-hover:scale-110"
+                            loading="lazy" width="400" height="400" onclick="openModal(this.src)">
+                    </div>
+                    <div
+                        class="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-lg aspect-square group bg-white dark:bg-slate-800 hidden lg:block gallery-hidden-mobile">
+                        <img src="img/gallery/9.jpeg" alt="Galeria Seger"
+                            class="w-full h-full object-cover transition transform duration-500 group-hover:scale-110"
+                            loading="lazy" width="400" height="400" onclick="openModal(this.src)">
+                    </div>
+                    <div
+                        class="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-lg aspect-square group bg-white dark:bg-slate-800 hidden lg:block gallery-hidden-mobile">
+                        <img src="img/gallery/10.jpeg" alt="Galeria Seger"
+                            class="w-full h-full object-cover transition transform duration-500 group-hover:scale-110"
+                            loading="lazy" width="400" height="400" onclick="openModal(this.src)">
+                    </div>
+                    <div
+                        class="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-lg aspect-square group bg-white dark:bg-slate-800 hidden lg:block gallery-hidden-mobile">
+                        <img src="img/gallery/11.jpeg" alt="Galeria Seger"
+                            class="w-full h-full object-cover transition transform duration-500 group-hover:scale-110"
+                            loading="lazy" width="400" height="400" onclick="openModal(this.src)">
+                    </div>
+                    <div
+                        class="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-lg aspect-square group bg-white dark:bg-slate-800 hidden lg:block gallery-hidden-mobile">
+                        <img src="img/gallery/12.jpeg" alt="Galeria Seger"
+                            class="w-full h-full object-cover transition transform duration-500 group-hover:scale-110"
+                            loading="lazy" width="400" height="400" onclick="openModal(this.src)">
+                    </div>
+                    <div
+                        class="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-lg aspect-square group bg-white dark:bg-slate-800 hidden lg:block gallery-hidden-mobile">
+                        <img src="img/gallery/13.jpeg" alt="Galeria Seger"
+                            class="w-full h-full object-cover transition transform duration-500 group-hover:scale-110"
+                            loading="lazy" width="400" height="400" onclick="openModal(this.src)">
+                    </div>
+                    <div
+                        class="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-lg aspect-square group bg-white dark:bg-slate-800 hidden lg:block gallery-hidden-mobile">
+                        <img src="img/gallery/14.jpeg" alt="Galeria Seger"
+                            class="w-full h-full object-cover transition transform duration-500 group-hover:scale-110"
+                            loading="lazy" width="400" height="400" onclick="openModal(this.src)">
+                    </div>
+                    <div
+                        class="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-lg aspect-square group bg-white dark:bg-slate-800 hidden lg:block gallery-hidden-mobile">
+                        <img src="img/gallery/15.jpeg" alt="Galeria Seger"
+                            class="w-full h-full object-cover transition transform duration-500 group-hover:scale-110"
+                            loading="lazy" width="400" height="400" onclick="openModal(this.src)">
+                    </div>
+                    <div
+                        class="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-lg aspect-square group bg-white dark:bg-slate-800 hidden lg:block gallery-hidden-mobile">
+                        <img src="img/gallery/16.jpeg" alt="Galeria Seger"
+                            class="w-full h-full object-cover transition transform duration-500 group-hover:scale-110"
+                            loading="lazy" width="400" height="400" onclick="openModal(this.src)">
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center lg:hidden">
+                    <button id="btn-gallery-toggle"
+                        onclick="toggleSection('galeria', 'btn-gallery-toggle', 'gallery-hidden-mobile', 'block')"
+                        class="btn-outline py-2 px-6 text-sm font-display border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300"
+                        data-expanded="false">
+                        <span data-i18n="show_more">Pokaż więcej</span> <i class="fas fa-chevron-down ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <div id="imageModal"
+            class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 flex items-center justify-center p-4"
+            onclick="closeModal()">
+            <span class="absolute top-5 right-5 text-white text-4xl cursor-pointer hover:text-orange-500">×</span>
+            <img id="modalImg" class="max-w-full max-h-screen rounded shadow-2xl" src="">
+        </div>
+
+        <section id="kontakt" class="py-20 bg-white dark:bg-darkcard transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div
+                    class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-gray-50 dark:bg-darkbg rounded-2xl shadow-xl overflow-hidden border border-gray-100 dark:border-slate-800">
+                    <div class="p-10 lg:p-14">
+                        <h2 class="font-display text-3xl font-bold text-slate-900 dark:text-white mb-8"
+                            data-i18n="contact_header">Napisz do nas</h2>
+                        <form action="https://formsubmit.co/seger@segerjastrzebiezdroj.pl" method="POST"
+                            class="space-y-6 mb-12 font-sans" id="contactForm">
+                            <input type="hidden" name="_subject" value="Nowa wiadomość ze strony SEGER">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                            <div>
+                                <label for="input-name"
+                                    class="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-1"
+                                    data-i18n="form_name">Imię i nazwisko</label>
+                                <input id="input-name" type="text" name="name" required
+                                    class="form-input bg-white dark:bg-slate-800 border border-gray-300 dark:border-gray-600 text-slate-900 dark:text-white">
+                            </div>
+                            <div>
+                                <label for="input-email"
+                                    class="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-1"
+                                    data-i18n="form_email">Email</label>
+                                <input id="input-email" type="email" name="email" required
+                                    class="form-input bg-white dark:bg-slate-800 border border-gray-300 dark:border-gray-600 text-slate-900 dark:text-white">
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <label for="input-message"
+                                        class="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-1"
+                                        data-i18n="form_msg">Wiadomość</label>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400"
+                                        data-i18n="form_max_chars">Max
+                                        2000 znaków</span>
+                                </div>
+                                <textarea id="input-message" name="message" rows="4" maxlength="2000" required
+                                    class="form-input bg-white dark:bg-slate-800 border border-gray-300 dark:border-gray-600 text-slate-900 dark:text-white"></textarea>
+                            </div>
+                            <button type="submit" class="w-full btn-primary py-3 font-display"
+                                data-i18n="form_btn">Wyślij
+                                wiadomość</button>
+                        </form>
+                        <div
+                            class="border-t border-gray-200 dark:border-gray-700 pt-8 space-y-4 text-sm md:text-base font-sans">
+                            <div class="contact-item dark:text-gray-300 items-start">
+                                <i class="fas fa-map-marker-alt text-orange-600 mt-1"></i>
+                                <a href="https://maps.app.goo.gl/RZLKhvvpM93EVv8S6" target="_blank"
+                                    class="hover:text-orange-600 transition">ul. Pszczyńska 305<br>44-335 Jastrzębie
+                                    Zdrój</a>
+                            </div>
+                            <div class="contact-item dark:text-gray-300">
+                                <i class="fas fa-phone-alt text-blue-600"></i>
+                                <a href="tel:+48324711098" class="hover:text-orange-600 transition">tel. (32) 471 10
+                                    98</a>
+                            </div>
+                            <div class="contact-item dark:text-gray-300">
+                                <i class="fas fa-fax text-blue-600"></i>
+                                <span>tel./fax (32) 471 47 50</span>
+                            </div>
+                            <div class="contact-item dark:text-gray-300">
+                                <i class="fas fa-envelope text-gray-600"></i>
+                                <a href="mailto:seger@segerjastrzebiezdroj.pl"
+                                    class="hover:text-orange-600 transition">seger@segerjastrzebiezdroj.pl</a>
+                            </div>
+                            <div class="contact-item dark:text-gray-300 items-start">
+                                <i class="fas fa-clock text-gray-500 mt-1"></i>
+                                <span data-i18n="contact_hours">Pn-Pt: 08:00 - 16:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-96 lg:h-auto bg-slate-200">
+                        <iframe title="Mapa lokalizacji firmy Seger"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d328524.1164517684!2d18.1479071!3d49.9627057!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471152d511754591%3A0x2b91203bb0e19f2f!2sSeger.%20Hurtownia%20uszczelnie%C5%84%20technicznych!5e0!3m2!1spl!2spl!4v1769905585499!5m2!1spl!2spl"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer
+            class="bg-slate-900 dark:bg-black text-slate-400 pt-16 pb-12 border-t border-slate-800 text-center font-sans">
+            <div class="flex justify-center gap-8 text-2xl leading-none mb-4">
+                <a href="https://www.facebook.com/profile.php?id=61558801223063" target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-slate-500 hover:text-blue-500 transition-all transform hover:-translate-y-1"
+                    aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://share.google/UjQ5cj6ti2x6Qoxn4" target="_blank" rel="noopener noreferrer"
+                    class="text-slate-500 hover:text-red-500 transition-all transform hover:-translate-y-1"
+                    aria-label="Google"><i class="fab fa-google"></i></a>
+            </div>
+            <div class="text-white font-display font-semibold text-lg tracking-widest uppercase leading-none mb-4">©
+                <span id="current-year"></span> F.H.U. SEGER
+            </div>
+            <div class="leading-none mb-4"><a href="polityka-prywatnosci.html"
+                    class="text-[13px] opacity-60 hover:opacity-100 hover:text-orange-500 transition duration-300 border-b border-transparent hover:border-orange-500 pb-0.5"
+                    data-i18n="footer_pp">Polityka Prywatności</a></div>
+            <div class="text-[13px] opacity-40 tracking-tight leading-none"><span data-i18n="footer_designed">Designed
+                    by</span><span class="font-bold text-slate-300 ml-1 uppercase">Kamil Rusek</span></div>
+        </footer>
+
+        <div id="cookie-banner"
+            class="fixed bottom-0 w-full bg-slate-900 text-white p-4 z-50 transform translate-y-full transition-transform duration-300 flex flex-col sm:flex-row justify-between items-center shadow-lg border-t border-slate-700 font-sans">
+            <div class="text-sm mb-4 sm:mb-0 text-center sm:text-left pr-4">
+                <span data-i18n="cookie_text">Ta strona używa plików cookies w celach analitycznych. Korzystając ze
+                    strony,
+                    wyrażasz zgodę na ich używanie.</span>
+            </div>
+            <div class="flex space-x-4">
+                <button id="accept-cookies"
+                    class="bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded text-sm font-bold transition font-display"
+                    data-i18n="cookie_accept">Akceptuję</button>
+            </div>
+        </div>
+
+        <script src="js/translations.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            function openModal(src) {
+                const modal = document.getElementById('imageModal');
+                const modalImg = document.getElementById('modalImg');
+                modalImg.src = src;
+                modal.classList.remove('hidden');
+            }
+            function closeModal() {
+                document.getElementById('imageModal').classList.add('hidden');
+            }
+        </script>
+    </main>
+</body>
+
+</html>
