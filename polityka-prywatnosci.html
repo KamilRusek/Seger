@@ -66,16 +66,16 @@
                     </button>
 
                     <div class="flex space-x-2 border-l pl-4 border-gray-300 dark:border-gray-600 text-base font-sans">
-                        <button onclick="setLanguage('pl')"
+                        <button onclick="setLanguage('pl')" data-lang="pl"
                             class="lang-btn active hover:text-slate-900 dark:hover:text-[#fffee2] transition"
                             id="btn-pl" aria-label="Język polski">PL</button>
-                        <button onclick="setLanguage('en')"
+                        <button onclick="setLanguage('en')" data-lang="en"
                             class="lang-btn hover:text-slate-900 dark:hover:text-[#fffee2] transition" id="btn-en"
                             aria-label="Język angielski">EN</button>
-                        <button onclick="setLanguage('cz')"
+                        <button onclick="setLanguage('cz')" data-lang="cz"
                             class="lang-btn hover:text-slate-900 dark:hover:text-[#fffee2] transition" id="btn-cz"
                             aria-label="Język czeski">CZ</button>
-                        <button onclick="setLanguage('sk')"
+                        <button onclick="setLanguage('sk')" data-lang="sk"
                             class="lang-btn hover:text-slate-900 dark:hover:text-[#fffee2] transition" id="btn-sk"
                             aria-label="Język słowacki">SK</button>
                     </div>
@@ -114,10 +114,14 @@
                 data-i18n="nav_contact">Kontakt</a>
 
             <div class="py-4 px-6 flex justify-center space-x-6 bg-gray-50 dark:bg-slate-800 font-sans">
-                <button onclick="setLanguage('pl')" class="lang-btn font-bold text-lg cursor-pointer">PL</button>
-                <button onclick="setLanguage('en')" class="lang-btn font-bold text-lg cursor-pointer">EN</button>
-                <button onclick="setLanguage('cz')" class="lang-btn font-bold text-lg cursor-pointer">CZ</button>
-                <button onclick="setLanguage('sk')" class="lang-btn font-bold text-lg cursor-pointer">SK</button>
+                <button onclick="setLanguage('pl')" data-lang="pl"
+                    class="lang-btn font-bold text-lg cursor-pointer">PL</button>
+                <button onclick="setLanguage('en')" data-lang="en"
+                    class="lang-btn font-bold text-lg cursor-pointer">EN</button>
+                <button onclick="setLanguage('cz')" data-lang="cz"
+                    class="lang-btn font-bold text-lg cursor-pointer">CZ</button>
+                <button onclick="setLanguage('sk')" data-lang="sk"
+                    class="lang-btn font-bold text-lg cursor-pointer">SK</button>
             </div>
         </div>
     </nav>
@@ -198,7 +202,9 @@
                 <p class="mt-4" data-i18n="pp_5_note">
                     W celu realizacji powyższych praw prosimy o kontakt pod adresem e-mail: <a
                         href="mailto:seger@segerjastrzebiezdroj.pl"
-                        class="tfont-bold text-slate-900 dark:text-[#fffee2]">seger@segerjastrzebiezdroj.pl</a>.
+                        class="font-bold text-slate-900 dark:text-[#fffee2] hover:underline">
+                        seger@segerjastrzebiezdroj.pl
+                    </a>
                 </p>
 
                 <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4 font-display"
@@ -222,15 +228,12 @@
         class="bg-slate-900 dark:bg-black text-slate-400 pt-16 pb-12 border-t border-slate-800 text-center font-sans">
         <div class="flex justify-center gap-8 text-2xl leading-none mb-4">
             <a href="https://www.facebook.com/profile.php?id=61558801223063" target="_blank" rel="noopener noreferrer"
-                class="text-slate-500 hover:text-blue-500 transition-all transform hover:-translate-y-1"
-                aria-label="Facebook">
-                <i class="fab fa-facebook"></i>
-            </a>
+                class="text-slate-500 hover:text-[#1877F2] transition-colors duration-300" aria-label="Facebook"><i
+                    class="fab fa-facebook"></i></a>
+
             <a href="https://share.google/UjQ5cj6ti2x6Qoxn4" target="_blank" rel="noopener noreferrer"
-                class="text-slate-500 hover:text-red-500 transition-all transform hover:-translate-y-1"
-                aria-label="Google">
-                <i class="fab fa-google"></i>
-            </a>
+                class="text-slate-500 hover:text-[#DB4437] transition-colors duration-300" aria-label="Google"><i
+                    class="fab fa-google"></i></a>
         </div>
 
         <div class="text-white font-display font-semibold text-lg tracking-widest uppercase leading-none mb-4">

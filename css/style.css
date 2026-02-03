@@ -1,4 +1,4 @@
-/* css/style.css - WERSJA FINALNA (WARM CREAM & SMOOTH NAV) */
+/* css/style.css - FINAL TWEAKS (Exo 2 Font & Fixed Hovers) */
 
 body {
 	font-family: 'Inter', sans-serif;
@@ -63,13 +63,15 @@ html {
 	border-color: transparent;
 }
 
-/* PRZYCISKI - POPRAWKA: Ciekawszy hover */
+/* PRZYCISKI */
 .btn-primary {
-	background-color: #fffee2; /* Jasny krem */
+	background-color: #fffee2;
 	color: #0f172a;
 	border-radius: 0.5rem;
 	font-weight: 700;
-	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Bardziej naturalna animacja */
+	transition:
+		transform 0.2s ease-in-out,
+		background-color 0.2s;
 	display: inline-block;
 	text-align: center;
 	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -78,14 +80,11 @@ html {
 	border: 1px solid transparent;
 }
 
-/* Hover: Nie biały, ale głębszy krem/złoto - bardziej "mięsisty" */
 .btn-primary:hover {
 	background-color: #fdf0b5;
-	border-color: #fde68a;
-	transform: translateY(-2px); /* Lekkie uniesienie */
-	box-shadow:
-		0 10px 15px -3px rgba(255, 255, 226, 0.4),
-		0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	transform: scale(1.05);
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	border-color: transparent;
 }
 
 .btn-outline {
@@ -94,45 +93,50 @@ html {
 	border-style: solid;
 	border-radius: 0.5rem;
 	font-weight: 600;
-	transition: all 0.2s;
+	transition: transform 0.2s ease-in-out;
 	display: inline-block;
 	padding: 0.75rem 1.5rem;
 }
 .btn-outline:hover {
-	transform: scale(1.02);
+	transform: scale(1.05);
 }
 
-/* NAWIGACJA - POPRAWKA: Płynność bez skakania */
+/* NAWIGACJA DESKTOP */
 .nav-link {
-	color: #475569; /* Slate-600 */
+	color: #475569;
 	font-weight: 500;
-	/* Płynne przejście tylko koloru, bez zmiany rozmiaru */
-	transition: color 0.3s ease-in-out;
+	transition:
+		transform 0.2s ease-in-out,
+		color 0.2s;
 	padding: 0.5rem;
 	cursor: pointer;
-	position: relative;
+	display: inline-block;
 }
 .dark .nav-link {
-	color: #cbd5e1; /* Slate-300 */
+	color: #cbd5e1;
 }
 
-/* Hover bez pogrubiania i bez podkreślenia */
 .nav-link:hover {
-	color: #0f172a; /* Slate-900 */
+	color: #000000;
+	font-weight: 600;
+	transform: scale(1.1);
 }
 .dark .nav-link:hover {
-	color: #fffee2; /* Kremowy */
+	color: #fffee2;
 }
 
-/* JĘZYKI */
+/* JĘZYKI - POPRAWKA: Czcionka Exo 2 */
 .lang-btn {
+	font-family: 'Exo 2', sans-serif; /* WYMUSZENIE CZCIONKI */
 	cursor: pointer;
 	opacity: 0.6;
 	transition:
+		transform 0.2s ease-in-out,
 		opacity 0.3s,
 		color 0.3s;
 	font-weight: 600;
 	padding: 0 4px;
+	display: inline-block;
 }
 .dark .lang-btn {
 	color: #cbd5e1;
@@ -140,14 +144,41 @@ html {
 .lang-btn:hover,
 .lang-btn.active {
 	opacity: 1;
-	color: #0f172a;
+	color: #000000;
 }
+.lang-btn:hover {
+	transform: scale(1.2);
+}
+
 .dark .lang-btn:hover,
 .dark .lang-btn.active {
 	color: #fffee2;
 }
 
-/* KARTY PRODUKTÓW - POPRAWKA: Bez ramek na hover */
+/* MENU MOBILNE */
+#mobile-menu a.active {
+	background-color: #f1f5f9;
+	color: #0f172a;
+	font-weight: 700;
+	border-left: 4px solid #0f172a;
+}
+.dark #mobile-menu a.active {
+	background-color: #1e293b;
+	color: #fffee2;
+	border-left: 4px solid #fffee2;
+}
+#mobile-menu a:hover {
+	background-color: #f8fafc;
+	color: #000000;
+	padding-left: 1.75rem;
+	transition: all 0.2s;
+}
+.dark #mobile-menu a:hover {
+	background-color: #334155;
+	color: #fffee2;
+}
+
+/* KARTY PRODUKTÓW */
 .product-card {
 	border: 1px solid #e2e8f0;
 	border-radius: 0.75rem;
@@ -158,7 +189,9 @@ html {
 	justify-content: center;
 	text-align: center;
 	height: 100%;
-	transition: all 0.4s ease; /* Wolniejsze, gładsze przejście */
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
 	cursor: default;
 }
 .dark .product-card {
@@ -169,14 +202,9 @@ html {
 		padding: 1.5rem;
 	}
 }
-
-/* Hover: Tylko cień i uniesienie, bez koloru ramki */
 .product-card:hover {
-	transform: translateY(-8px);
-	box-shadow:
-		0 20px 25px -5px rgba(0, 0, 0, 0.1),
-		0 10px 10px -5px rgba(0, 0, 0, 0.04);
-	/* Border color change removed based on feedback */
+	transform: translateY(-5px);
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .product-card i {
@@ -203,17 +231,16 @@ html {
 	}
 }
 
-/* POZOSTAŁE STYLE */
-.contact-item {
-	display: flex;
-	align-items: center;
-	font-weight: 500;
+/* Dark Mode Overrides */
+.dark .form-input:focus {
+	box-shadow: 0 0 0 2px #fffee2;
 }
-.contact-item i {
-	width: 2rem;
-	text-align: center;
-	margin-right: 0.5rem;
+/* Stopka - link hover fix */
+footer a:hover {
+	color: #ffffff !important; /* BIAŁY HOVER W STOPCE DLA POLITYKI */
 }
+
+/* Animations */
 .fade-in-up {
 	animation: fadeInUp 0.8s ease-out forwards;
 	opacity: 0;
@@ -236,9 +263,4 @@ html {
 }
 .gallery-item:hover img {
 	transform: scale(1.1);
-}
-
-/* DARK MODE OVERRIDES */
-.dark .form-input:focus {
-	box-shadow: 0 0 0 2px #fffee2;
 }

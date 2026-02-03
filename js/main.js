@@ -129,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function setLanguage(lang) {
 	if (typeof translations === 'undefined' || !translations[lang]) return
 
+	// 1. Aktualizacja tekstów
 	const elements = document.querySelectorAll('[data-i18n]')
 	elements.forEach(el => {
 		const key = el.getAttribute('data-i18n')
@@ -143,14 +144,17 @@ function setLanguage(lang) {
 		}
 	})
 
+	// 2. Aktualizacja przycisków języka (TERAZ DZIAŁA NA MOBILE I DESKTOP)
+	// Najpierw usuwamy klasę 'active' ze wszystkich przycisków
 	document.querySelectorAll('.lang-btn').forEach(btn => {
 		btn.classList.remove('active')
 	})
 
-	const activeBtn = document.getElementById(`btn-${lang}`)
-	if (activeBtn) {
-		activeBtn.classList.add('active')
-	}
+	// Następnie dodajemy 'active' do wszystkich przycisków wybranego języka
+	// Wymaga dodania atrybutu data-lang="pl" w HTML
+	document.querySelectorAll(`.lang-btn[data-lang="${lang}"]`).forEach(btn => {
+		btn.classList.add('active')
+	})
 
 	localStorage.setItem('lang', lang)
 }
