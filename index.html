@@ -773,14 +773,26 @@
         </footer>
 
         <div id="cookie-banner"
-            class="fixed bottom-0 w-full bg-slate-900 text-white p-4 z-50 transform translate-y-full transition-transform duration-300 flex flex-col sm:flex-row justify-between items-center shadow-lg border-t border-slate-700 font-sans">
-            <div class="text-sm mb-4 sm:mb-0 text-center sm:text-left pr-4">
-                <span data-i18n="cookie_text">Ta strona używa plików cookies w celach analitycznych. Korzystając ze
-                    strony,
-                    wyrażasz zgodę na ich używanie.</span>
+            class="fixed bottom-0 w-full bg-slate-900 text-white p-4 z-50 transform translate-y-full transition-transform duration-300 flex flex-col md:flex-row justify-between items-center shadow-lg border-t border-slate-700 font-sans">
+
+            <div class="text-sm mb-4 md:mb-0 text-center md:text-left pr-0 md:pr-4 max-w-3xl">
+                <span data-i18n="cookie_text">
+                    Ta strona korzysta z plików cookies, aby świadczyć usługi na najwyższym poziomie. Możesz
+                    zaakceptować ich użycie lub je odrzucić.
+                </span>
+                <a href="/polityka-prywatnosci.html" class="underline text-slate-400 hover:text-white ml-1"
+                    data-i18n="cookie_more">Więcej</a>
             </div>
-            <div class="flex space-x-4">
-                <button id="accept-cookies" class="btn-primary text-sm px-6 py-2 w-full sm:w-auto mt-2 sm:mt-0"
+
+            <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                <button id="reject-cookies"
+                    class="px-6 py-2 border border-slate-500 text-slate-300 rounded hover:bg-slate-800 hover:text-white transition text-sm font-semibold w-full sm:w-auto"
+                    data-i18n="cookie_reject">
+                    Odrzuć
+                </button>
+
+                <button id="accept-cookies"
+                    class="btn-primary px-6 py-2 rounded text-slate-900 text-sm font-bold w-full sm:w-auto shadow-md"
                     data-i18n="cookie_accept">
                     Akceptuję
                 </button>

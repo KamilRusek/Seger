@@ -71,20 +71,60 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-	// --- Obsługa Cookies ---
+	// --- Obsługa Cookies (RODO / GDPR) ---
 	const cookieBanner = document.getElementById('cookie-banner')
-	const acceptCookiesBtn = document.getElementById('accept-cookies')
+	const acceptBtn = document.getElementById('accept-cookies')
+	const rejectBtn = document.getElementById('reject-cookies')
 
-	if (cookieBanner && acceptCookiesBtn) {
-		if (!localStorage.getItem('cookiesAccepted')) {
+	// Funkcja uruchamiająca analitykę (np. Google Analytics)
+	function loadAnalytics() {
+		console.log('Analityka włączona (Zgoda użytkownika)')
+
+		// KROK 1: Dynamicznie dodajemy bibliotekę Google
+		const script = document.createElement('script')
+		script.src = 'https://www.googletagmanager.com/gtag/js?id=G-FC4KCVRPQB'
+		script.async = true
+		document.head.appendChild(script)
+
+		// KROK 2: Konfiguracja
+		window.dataLayer = window.dataLayer || []
+		function gtag() {
+			dataLayer.push(arguments)
+		}
+		gtag('js', new Date())
+		gtag('config', 'G-FC4KCVRPQB')
+	}
+
+	// Sprawdzamy decyzję zapisaną w pamięci
+	const cookieConsent = localStorage.getItem('cookie_consent') // 'granted' lub 'denied'
+
+	if (!cookieConsent) {
+		// Brak decyzji -> Pokaż banner po 1 sekundzie
+		if (cookieBanner) {
 			setTimeout(() => {
 				cookieBanner.classList.remove('translate-y-full')
 			}, 1000)
 		}
+	} else if (cookieConsent === 'granted') {
+		// Zgoda już była -> Ładujemy analitykę od razu
+		loadAnalytics()
+	}
 
-		acceptCookiesBtn.addEventListener('click', () => {
-			localStorage.setItem('cookiesAccepted', 'true')
-			cookieBanner.classList.add('translate-y-full')
+	// Obsługa kliknięcia AKCEPTUJ
+	if (acceptBtn && cookieBanner) {
+		acceptBtn.addEventListener('click', () => {
+			localStorage.setItem('cookie_consent', 'granted') // Zapisz zgodę
+			loadAnalytics() // Uruchom skrypty
+			cookieBanner.classList.add('translate-y-full') // Schowaj banner
+		})
+	}
+
+	// Obsługa kliknięcia ODRZUĆ
+	if (rejectBtn && cookieBanner) {
+		rejectBtn.addEventListener('click', () => {
+			localStorage.setItem('cookie_consent', 'denied') // Zapisz odmowę
+			// NIE uruchamiamy loadAnalytics()
+			cookieBanner.classList.add('translate-y-full') // Schowaj banner
 		})
 	}
 

@@ -48,8 +48,10 @@ const translations = {
 		footer_designed: 'Projekt i wykonanie',
 		footer_pp: 'Polityka Prywatności',
 		cookie_text:
-			'Ta strona używa plików cookies w celach analitycznych. Korzystając ze strony, wyrażasz zgodę na ich używanie.',
+			'Ta strona korzysta z plików cookies, aby świadczyć usługi na najwyższym poziomie. Możesz zaakceptować ich użycie lub je odrzucić.',
 		cookie_accept: 'Akceptuję',
+		cookie_reject: 'Odrzucam',
+		cookie_more: 'Więcej',
 
 		// POLITYKA PRYWATNOŚCI - ZAKTUALIZOWANE DANE
 		pp_main_title: 'Polityka Prywatności',
@@ -162,8 +164,11 @@ const translations = {
 		footer_rights: 'All rights reserved.',
 		footer_designed: 'Designed by',
 		footer_pp: 'Privacy Policy',
-		cookie_text: 'This site uses cookies for analytical purposes. By using the site, you agree to their use.',
+		cookie_text:
+			'This site uses cookies to provide services at the highest level. You can accept their use or reject it.',
 		cookie_accept: 'Accept',
+		cookie_reject: 'Decline',
+		cookie_more: 'Read more',
 
 		// PRIVACY POLICY EN
 		pp_main_title: 'Privacy Policy',
@@ -277,8 +282,9 @@ const translations = {
 		footer_designed: 'Navrhl',
 		footer_pp: 'Zásady ochrany osobních údajů',
 		cookie_text:
-			'Tato stránka používá soubory cookies pro analytické účely. Používáním stránky souhlasíte s jejich použitím.',
+			'Tato stránka používá soubory cookies k poskytování služeb na nejvyšší úrovni. Můžete jejich použití přijmout nebo odmítnout.',
 		cookie_accept: 'Přijmout',
+		cookie_reject: 'Odmítnout',
 
 		// PRIVACY POLICY CZ
 		pp_main_title: 'Zásady ochrany osobních údajů',
@@ -341,6 +347,7 @@ const translations = {
 		prod_fasteners: 'Spojovací materiál',
 		show_more: 'Zobrazit více',
 		show_less: 'Zobrazit méně',
+		cookie_more: 'Více',
 	},
 	sk: {
 		meta_title: 'Seger Jastrzębie-Zdrój - Priemyselný veľkoobchod, Tesnenia, Ložiská',
@@ -390,8 +397,9 @@ const translations = {
 		footer_designed: 'Navrhol',
 		footer_pp: 'Zásady ochrany osobných údajov',
 		cookie_text:
-			'Táto stránka používá súbory cookies na analytické účely. Používaním stránky súhlasíte s ich použitím.',
+			'Táto stránka používa súbory cookies na poskytovanie služieb na najvyššej úrovni. Môžete ich použitie prijať alebo odmietnuť.',
 		cookie_accept: 'Prijať',
+		cookie_reject: 'Odmietnuť',
 
 		// PRIVACY POLICY SK
 		pp_main_title: 'Zásady ochrany osobných údajov',
@@ -456,5 +464,6 @@ const translations = {
 		prod_fasteners: 'Spojovací materiál',
 		show_more: 'Zobraziť viac',
 		show_less: 'Zobraziť menej',
+		cookie_more: 'Viac',
 	},
 }
