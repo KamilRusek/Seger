@@ -37,11 +37,11 @@ html {
 /* --- HERO --- */
 .hero-bg {
 	position: relative;
-	overflow: hidden;
-	/* Usuwamy background stąd, dajemy go do ::before */
+	/* overflow: hidden; <- USUNIĘTE: To blokuje efekt Parallax! */
 }
 
-/* Pseudo-element z rozmytym zdjęciem */
+/* Pseudo-element z ciemniejszym gradientem (BEZ ZDJĘCIA) */
+/* Zdjęcie będzie teraz w #home w HTML, a tu tylko przyciemnienie */
 .hero-bg::before {
 	content: '';
 	position: absolute;
@@ -49,23 +49,18 @@ html {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	/* Ciemniejszy gradient + Zdjęcie */
-	background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.5)), url('../img/company/company_2.png');
-	background-size: cover;
-	background-position: center;
-	background-attachment: scroll;
-
-	/* TO ROBI BLUR TYLKO NA ZDJĘCIU */
-	filter: blur(4px);
-
-	/* Powiększamy tło, żeby ukryć rozmyte krawędzie */
-	transform: scale(1.1);
-	z-index: 0;
+	background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)); /* Tylko przyciemnienie */
+	z-index: 0; /* Pod tekstem, ale nad tłem */
+	pointer-events: none; /* Żeby nie blokowało klikania */
 }
 
-@media (min-width: 1024px) {
-	.hero-bg::before {
-		background-attachment: fixed;
+/* --- WYMUSZENIE PARALLAX (Tylko Desktopy) --- */
+@media (min-width: 768px) {
+	#home {
+		background-attachment: fixed !important;
+		background-position: center !important;
+		background-repeat: no-repeat !important;
+		background-size: cover !important;
 	}
 }
 
