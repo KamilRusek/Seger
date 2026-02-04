@@ -1,4 +1,3 @@
-// js/translations.js
 const translations = {
 	pl: {
 		meta_title: 'Seger Jastrzębie-Zdrój - Hurtownia Przemysłowa, Uszczelnienia, Łożyska',
@@ -16,7 +15,7 @@ const translations = {
 		nav_gallery: 'Galeria',
 		nav_about: 'O firmie',
 		nav_contact: 'Kontakt',
-		btn_check_offer: 'Sprawdź ofertę',
+		btn_offer: 'Sprawdź ofertę',
 		btn_contact_us: 'Skontaktuj się',
 		offer_title: 'Nasza oferta',
 		offer_intro:
@@ -132,11 +131,11 @@ const translations = {
 		nav_gallery: 'Gallery',
 		nav_about: 'About Us',
 		nav_contact: 'Contact',
-		btn_check_offer: 'Check Offer',
+		btn_offer: 'Check Offer',
 		btn_contact_us: 'Contact Us',
 		offer_title: 'Our Offer',
 		offer_intro:
-			'Our offer includes a wide selection of high-quality gaskets, sealing tapes, and other products necessary for effective protection of various structures.',
+			'Our offer includes a wide selection of high-quality gaskets, sealing tapes, and other essential products for the effective protection of various structures. We invite you to explore our offer and browse through our individual product categories.',
 		about_title: 'About Our Company',
 		about_text:
 			'Since the beginning of our activity, we have offered professional service, delivery, and shipment of technical seals, retaining rings, and a wide range of materials used in the automotive industry, heavy industrial machinery, agricultural machinery, railways, sanitary, chemical and gas fittings, machine tools, and mining equipment.',
@@ -246,11 +245,11 @@ const translations = {
 		nav_gallery: 'Galerie',
 		nav_about: 'O nás',
 		nav_contact: 'Kontakt',
-		btn_check_offer: 'Zobrazit nabídku',
+		btn_offer: 'Zobrazit nabídku',
 		btn_contact_us: 'Kontaktujte nás',
 		offer_title: 'Naše nabídka',
 		offer_intro:
-			'Naše nabídka zahrnuje široký výběr vysoce kvalitních těsnění, těsnicích pásek a dalších produktů nezbytných pro účinné zabezpečení různých konstrukcí.',
+			'Naše nabídka zahrnuje široký výběr vysoce kvalitních těsnění, těsnicích pásek a dalších produktů nezbytných pro účinné zabezpečení různých konstrukcí. Zveme vás k seznámení se s naší nabídkou a k prozkoumání jednotlivých produktových kategorií.',
 		about_title: 'O naší firmě',
 		about_text:
 			'Od zahájení naší činnosti nabízíme odborný servis, dodávky a přepravu technických těsnění, pojistných kroužků a široký sortiment materiálů pro automobilový průmysl, těžké průmyslové stroje, zemědělské stroje, železnici, sanitární, chemické a plynové armatúry, obráběcí stroje a těžební zařízení.',
@@ -359,11 +358,11 @@ const translations = {
 		nav_gallery: 'Galéria',
 		nav_about: 'O nás',
 		nav_contact: 'Kontakt',
-		btn_check_offer: 'Pozrieť ponuku',
+		btn_offer: 'Pozrieť ponuku',
 		btn_contact_us: 'Kontaktujte nás',
 		offer_title: 'Naša ponuka',
 		offer_intro:
-			'Naša ponuka zahŕňa široký výber vysoko kvalitných tesnení, tesniacich pások a ďalších produktov nevyhnutných pre účinné zabezpečenie rôznych konštrukcií.',
+			'Naša ponuka zahŕňa široký výber vysoko kvalitných tesnení, tesniacich pások a iných produktov nevyhnutných na účinné zabezpečenie rôznych konštrukcií. Pozývame vás oboznámiť sa s našou ponukou a preskúmať jednotlivé kategórie produktov.',
 		about_title: 'O našej firme',
 		about_text:
 			'Od začiatku našej činnosti ponúkame odborný servis, dodávky a prepravu technických tesnení, poistných krúžkov a široký sortiment materiálov pre automobilový priemysel, ťažké priemyselné stroje, poľnohospodárske stroje, železnice, sanitárne, chemické a plynové armatúry, obrábacie stroje a ťažobné zariadenia.',

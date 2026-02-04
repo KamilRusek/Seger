@@ -12,16 +12,4 @@
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
-    <url>
-        <loc>https://segerjastrzebiezdroj.pl/#oferta</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://segerjastrzebiezdroj.pl/#o-nas</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://segerjastrzebiezdroj.pl/#kontakt</loc>
-        <priority>0.8</priority>
-    </url>
 </urlset>

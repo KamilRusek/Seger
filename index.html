@@ -5,26 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://segerjastrzebiezdroj.pl/">
-    <meta property="og:title" content="Seger Jastrzębie-Zdrój - Hurtownia Przemysłowa, Uszczelnienia, Łożyska">
-    <meta property="og:description"
-        content="Hurtownia artykułów przemysłowych Seger w Jastrzębiu-Zdroju. Oferujemy uszczelnienia techniczne, łożyska, chemię przemysłową i elementy złączne. Sprawdź nas!">
-    <meta property="og:image" content="https://segerjastrzebiezdroj.pl/img/company/company-2.png">
-
-    <link rel="icon" type="image/svg+xml" href="img/logo/logo - dark.svg">
+    <link rel="icon" type="image/svg+xml" href="img/logo/logo_dark.svg">
 
     <title data-i18n="meta_title">Seger Jastrzębie-Zdrój - Hurtownia Przemysłowa, Uszczelnienia, Łożyska</title>
     <meta name="description" data-i18n="meta_desc"
         content="Hurtownia artykułów przemysłowych Seger w Jastrzębiu-Zdroju. Oferujemy uszczelnienia techniczne, łożyska, chemię przemysłową i elementy złączne. Sprawdź nas!">
+
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://segerjastrzebiezdroj.pl/" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://segerjastrzebiezdroj.pl/">
+    <meta property="og:title" content="Seger Jastrzębie-Zdrój - Hurtownia Przemysłowa, Uszczelnienia, Łożyska">
+    <meta property="og:description"
+        content="Hurtownia artykułów przemysłowych Seger w Jastrzębiu-Zdroju. Oferujemy uszczelnienia techniczne, łożyska, chemię przemysłową i elementy złączne.">
+    <meta property="og:image" content="https://segerjastrzebiezdroj.pl/img/company/company_2.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Seger Jastrzębie-Zdrój - Hurtownia Przemysłowa">
+    <meta name="twitter:description" content="Uszczelnienia techniczne, łożyska, chemia przemysłowa. Sprawdź nas!">
+    <meta name="twitter:image" content="https://segerjastrzebiezdroj.pl/img/company/company_2.png">
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WholesaleStore",
       "name": "F.H.U. SEGER",
-      "image": "https://segerjastrzebiezdroj.pl/img/logo/logo - dark.svg",
+      "image": "https://segerjastrzebiezdroj.pl/img/logo/logo_dark.svg",
       "telephone": "+48324711098",
       "email": "seger@segerjastrzebiezdroj.pl",
       "address": {
@@ -59,7 +66,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
-        // Wyłącza ostrzeżenia w konsoli
         window.tailwind = {
             config: {
                 darkMode: 'class',
@@ -91,10 +97,10 @@
 
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#" class="hover:opacity-80 transition" aria-label="Strona główna">
-                        <img src="img/logo/logo - light.svg"
+                        <img src="img/logo/logo_light.svg"
                             alt="Jasne logo F.H.U. Seger - Hurtownia Uszczelnień i Artykułów Przemysłowych"
                             class="h-10 w-auto dark:hidden block">
-                        <img src="img/logo/logo - dark.svg"
+                        <img src="img/logo/logo_dark.svg"
                             alt="Ciemne logo F.H.U. Seger - Hurtownia Uszczelnień i Artykułów Przemysłowych"
                             class="h-10 w-auto hidden dark:block">
                     </a>
@@ -196,7 +202,7 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center font-display">
-                    <a href="#oferta" class="btn-primary text-lg hero-text-shadow" data-i18n="btn_offer">Zobacz
+                    <a href="#oferta" class="btn-primary text-lg hero-text-shadow" data-i18n="btn_offer">Sprawdź
                         ofertę</a>
 
                     <a href="#kontakt" class="btn-outline text-lg text-white border-white hero-text-shadow"
@@ -782,17 +788,6 @@
 
         <script src="js/translations.js"></script>
         <script src="js/main.js"></script>
-        <script>
-            function openModal(src) {
-                const modal = document.getElementById('imageModal');
-                const modalImg = document.getElementById('modalImg');
-                modalImg.src = src;
-                modal.classList.remove('hidden');
-            }
-            function closeModal() {
-                document.getElementById('imageModal').classList.add('hidden');
-            }
-        </script>
     </main>
 </body>
 

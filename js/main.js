@@ -1,13 +1,13 @@
 // js/main.js
 
 document.addEventListener('DOMContentLoaded', () => {
-	// --- 0. Automatyczny Rok w Stopce ---
+	// --- Automatyczny rok w stopce ---
 	const yearSpan = document.getElementById('current-year')
 	if (yearSpan) {
 		yearSpan.innerText = new Date().getFullYear()
 	}
 
-	// --- 1. Obsługa Menu Mobilnego ---
+	// --- Obsługa menu mobilnego ---
 	const mobileBtn = document.getElementById('mobile-menu-btn')
 	const mobileMenu = document.getElementById('mobile-menu')
 
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-	// --- 2. Obsługa Formularza Kontaktowego ---
+	// --- Obsługa formularza kontaktowego (FormSubmit) ---
 	const contactForm = document.getElementById('contactForm')
 
 	if (contactForm) {
@@ -43,9 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			fetch(form.action, {
 				method: 'POST',
 				body: formData,
-				headers: {
-					Accept: 'application/json',
-				},
+				headers: { Accept: 'application/json' },
 			})
 				.then(response => {
 					if (response.ok) {
@@ -57,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 						statusMsg.className = 'text-center text-sm mt-4 text-red-600 font-bold block'
 					}
 				})
-				.catch(error => {
+				.catch(() => {
 					statusMsg.innerText = 'Błąd połączenia. Spróbuj ponownie później.'
 					statusMsg.className = 'text-center text-sm mt-4 text-red-600 font-bold block'
 				})
@@ -73,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-	// --- 3. Obsługa Cookies ---
+	// --- Obsługa Cookies ---
 	const cookieBanner = document.getElementById('cookie-banner')
 	const acceptCookiesBtn = document.getElementById('accept-cookies')
 
@@ -90,12 +88,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-	// --- 4. Dark Mode / Light Mode ---
+	// --- Tryb Ciemny / Jasny (Dark Mode) ---
 	const toggleDesktop = document.getElementById('theme-toggle')
 	const toggleMobile = document.getElementById('theme-toggle-mobile')
 	const themeToggles = [toggleDesktop, toggleMobile].filter(el => el !== null)
 	const html = document.documentElement
 
+	// Sprawdzenie zapisanego motywu lub preferencji systemowych
 	if (
 		localStorage.getItem('theme') === 'dark' ||
 		(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
@@ -105,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		html.classList.remove('dark')
 	}
 
+	// Obsługa przełączników
 	themeToggles.forEach(toggle => {
 		toggle.addEventListener('click', () => {
 			if (html.classList.contains('dark')) {
@@ -117,19 +117,33 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	})
 
-	// --- 5. Inicjalizacja języka przy starcie ---
+	// --- Inicjalizacja języka przy starcie ---
 	const savedLang = localStorage.getItem('lang')
 	if (savedLang) {
 		setLanguage(savedLang)
 	}
 })
 
-// --- Funkcje Globalne ---
+// ==========================================
+// FUNKCJE GLOBALNE
+// ==========================================
 
+// --- Zmiana języka (i18n) i aktualizacja atrybutów ---
 function setLanguage(lang) {
 	if (typeof translations === 'undefined' || !translations[lang]) return
 
-	// 1. Aktualizacja tekstów
+	// Mapowanie kodów na standard ISO (np. cz -> cs)
+	const htmlLangCodes = {
+		pl: 'pl',
+		en: 'en',
+		cz: 'cs',
+		sk: 'sk',
+	}
+
+	// Aktualizacja atrybutu lang w HTML (ważne dla SEO/przeglądarek)
+	document.documentElement.setAttribute('lang', htmlLangCodes[lang] || lang)
+
+	// Aktualizacja tekstów na stronie
 	const elements = document.querySelectorAll('[data-i18n]')
 	elements.forEach(el => {
 		const key = el.getAttribute('data-i18n')
@@ -144,14 +158,10 @@ function setLanguage(lang) {
 		}
 	})
 
-	// 2. Aktualizacja przycisków języka (TERAZ DZIAŁA NA MOBILE I DESKTOP)
-	// Najpierw usuwamy klasę 'active' ze wszystkich przycisków
+	// Aktualizacja aktywnych przycisków języka
 	document.querySelectorAll('.lang-btn').forEach(btn => {
 		btn.classList.remove('active')
 	})
-
-	// Następnie dodajemy 'active' do wszystkich przycisków wybranego języka
-	// Wymaga dodania atrybutu data-lang="pl" w HTML
 	document.querySelectorAll(`.lang-btn[data-lang="${lang}"]`).forEach(btn => {
 		btn.classList.add('active')
 	})
@@ -159,10 +169,7 @@ function setLanguage(lang) {
 	localStorage.setItem('lang', lang)
 }
 
-/**
- * FUNKCJA PRZEŁĄCZANIA SEKCJI (Oferta / Galeria)
- * Naprawiona, aby obsługiwać priorytety Tailwinda za pomocą !hidden
- */
+// --- Rozwijanie sekcji (Oferta / Galeria) na mobile ---
 function toggleSection(sectionId, btnId, itemClass, displayClass) {
 	const btn = document.getElementById(btnId)
 	const hiddenItems = document.querySelectorAll('.' + itemClass)
@@ -173,10 +180,8 @@ function toggleSection(sectionId, btnId, itemClass, displayClass) {
 
 	hiddenItems.forEach(item => {
 		if (!isExpanded) {
-			// POKAZUJEMY - po prostu usuwamy hidden
 			item.classList.remove('hidden')
 		} else {
-			// CHOWAMY - po prostu dodajemy hidden
 			item.classList.add('hidden')
 		}
 	})
@@ -192,5 +197,22 @@ function toggleSection(sectionId, btnId, itemClass, displayClass) {
 
 	if (!isExpanded) {
 		document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
+	}
+}
+
+// --- Obsługa Galerii (Modal / Lightbox) ---
+function openModal(src) {
+	const modal = document.getElementById('imageModal')
+	const modalImg = document.getElementById('modalImg')
+	if (modal && modalImg) {
+		modalImg.src = src
+		modal.classList.remove('hidden')
+	}
+}
+
+function closeModal() {
+	const modal = document.getElementById('imageModal')
+	if (modal) {
+		modal.classList.add('hidden')
 	}
 }

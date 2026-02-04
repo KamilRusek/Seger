@@ -50,7 +50,7 @@ html {
 	width: 100%;
 	height: 100%;
 	/* Ciemniejszy gradient + Zdjęcie */
-	background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.5)), url('../img/company/company-2.png');
+	background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.5)), url('../img/company/company_2.png');
 	background-size: cover;
 	background-position: center;
 	background-attachment: scroll;
