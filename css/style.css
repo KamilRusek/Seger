@@ -36,15 +36,48 @@ html {
 
 /* --- HERO --- */
 .hero-bg {
-	background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('../img/company/company-1.jpeg');
+	position: relative;
+	overflow: hidden;
+	/* Usuwamy background stąd, dajemy go do ::before */
+}
+
+/* Pseudo-element z rozmytym zdjęciem */
+.hero-bg::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* Ciemniejszy gradient + Zdjęcie */
+	background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.5)), url('../img/company/company-2.png');
 	background-size: cover;
 	background-position: center;
 	background-attachment: scroll;
+
+	/* TO ROBI BLUR TYLKO NA ZDJĘCIU */
+	filter: blur(4px);
+
+	/* Powiększamy tło, żeby ukryć rozmyte krawędzie */
+	transform: scale(1.1);
+	z-index: 0;
 }
+
 @media (min-width: 1024px) {
-	.hero-bg {
+	.hero-bg::before {
 		background-attachment: fixed;
 	}
+}
+
+/* Klasa wymuszająca Exo 2 */
+.font-exo {
+	font-family: 'Exo 2', sans-serif !important;
+}
+
+/* Upewniamy się, że treść jest nad tłem */
+.hero-bg > * {
+	position: relative;
+	z-index: 10;
 }
 
 /* --- KOMPONENTY --- */
@@ -263,4 +296,9 @@ footer a:hover {
 }
 .gallery-item:hover img {
 	transform: scale(1.1);
+}
+
+/* Specjalny cień dla tekstów w Hero (zastępuje ciemne tło) */
+.hero-text-shadow {
+	filter: drop-shadow(0 4px 3px rgb(0 0 0 / 76%)) drop-shadow(0 2px 2px rgb(0 0 0 / 50%));
 }
