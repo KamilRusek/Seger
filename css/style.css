@@ -33,6 +33,19 @@ html {
 	font-weight: 100 900;
 	font-style: italic;
 }
+@font-face {
+	font-family: 'Time Script Bold';
+	src: url('../fonts/time_script_bold/Time_Script_W01_Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+.font-seger {
+	font-family: 'Time Script Bold', sans-serif !important;
+	text-transform: none;
+	letter-spacing: 0.15em;
+	display: inline-block;
+}
 
 /* --- HERO --- */
 .hero-bg {
