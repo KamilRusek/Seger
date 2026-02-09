@@ -162,6 +162,37 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (savedLang) {
 		setLanguage(savedLang)
 	}
+
+	// --- X. Czysty Smooth Scroll i Obsługa URL (All-in-One) ---
+
+	// 1. Obsługa kliknięć w linki (gdy jesteśmy już na stronie głównej)
+	document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
+		anchor.addEventListener('click', function (e) {
+			// Sprawdź, czy jesteśmy na stronie głównej
+			if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+				e.preventDefault()
+
+				const targetId = this.getAttribute('href').substring(1) // utnij /
+				const targetElement = document.querySelector(targetId) // np. #home
+
+				if (targetElement) {
+					targetElement.scrollIntoView({ behavior: 'smooth' })
+					// Czyścimy URL natychmiast po kliknięciu
+					history.replaceState(null, null, ' ')
+				}
+			}
+		})
+	})
+
+	// 2. Obsługa wejścia z innej podstrony (np. powrót z Polityki Prywatności)
+	// Sprawdzamy, czy po załadowaniu strony w adresie jest "hasztag" (np. #home)
+	if (window.location.hash) {
+		// Czekamy chwilę, aż przeglądarka przewinie do celu (to domyślne zachowanie),
+		// a potem czyścimy pasek adresu.
+		setTimeout(() => {
+			history.replaceState(null, null, ' ')
+		}, 100) // 100ms opóźnienia wystarczy
+	}
 })
 
 // ==========================================
